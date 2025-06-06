@@ -17,7 +17,7 @@ function Home() {
   return (
     <>
       <div>
-        <div className="relative overflow-hidden">
+        <div className="relative  overflow-hidden">
           <Motion.div
             initial={{ scale: 1.1 }}
             animate={{ scale: 1 }}
