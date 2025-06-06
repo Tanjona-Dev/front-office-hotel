@@ -3,8 +3,15 @@ import { Menu, X } from "lucide-react";
 import { motion as Motion } from "framer-motion";
 import LogoHotel from "../../assets/image/N_TLogo-removebg-preview.png";
 
+// Ajout des styles sur chaques liens dans le NavBarHorizotal
+function addStyleLinkIndex(index, setLienClick) {
+  setLienClick(index);
+}
+
+// Function principale
 function NavBarHorizotal({ refs }) {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const [lienClick, setLienClick] = useState(0);
 
   // Scroller sur les References recuperees sur les sections.
   const scrollToRef = (homeReference) => {
@@ -33,8 +40,12 @@ function NavBarHorizotal({ refs }) {
     },
   ];
 
-  const handleClickLiensMenu = (liens) => {
-    return liens.action(), setMenuIsOpen(false);
+  const handleClickLiensMenu = (liens, index) => {
+    return (
+      liens.action(),
+      setMenuIsOpen(false),
+      addStyleLinkIndex(index, setLienClick)
+    );
   };
 
   return (
@@ -53,11 +64,11 @@ function NavBarHorizotal({ refs }) {
         {menuIsOpen && (
           <Motion.div className="absolute top-15 bg-blue-500 opacity-88 right-0 w-full h-screen z-100 py-3 text-center">
             <ul className="flex flex-col gap-4">
-              {liensAffichesNavBar.map((liens) => (
+              {liensAffichesNavBar.map((liens, index) => (
                 <Motion.li
                   key={liens.id}
-                  className="text-white text-lg"
-                  onClick={() => handleClickLiensMenu(liens)}
+                  className={`text-white text-lg`}
+                  onClick={() => handleClickLiensMenu(liens, index)}
                 >
                   {liens.nom}
                 </Motion.li>
@@ -71,9 +82,11 @@ function NavBarHorizotal({ refs }) {
           return (
             <Motion.li
               whileTap={{ scaleX: 1.1 }}
-              className="hover:text-blue-800 hover:shadow-blue-950 text-black/80 font-semibold lg:text-lg cursor-pointer"
+              className={`px-2 py-1 rounded hover:text-blue-800 hover:shadow-blue-950 text-black/80 font-semibold lg:text-lg cursor-pointer ${
+                lienClick === index ? "bg-blue-700 text-white" : ""
+              }`}
               key={`${liens.id}-${index}`}
-              onClick={liens.action}
+              onClick={() => handleClickLiensMenu(liens, index)}
             >
               {liens.nom}
             </Motion.li>

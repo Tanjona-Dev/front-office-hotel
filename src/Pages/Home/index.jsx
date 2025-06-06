@@ -1,11 +1,11 @@
 import { ArrowDown } from "lucide-react";
+import Bar from "../../assets/image/BarIcon.png";
 import { motion as Motion } from "framer-motion";
+import SPA from "../../assets/image/SpaIcon.png";
 import home1 from "../../assets/image/BgLogin1.jpeg";
-import NTLogo from "../../assets/image/N_TLogo-removebg-preview.png";
 import Chambre from "../../assets/image/ChambreIcon.png";
 import Restaurent from "../../assets/image/RestaurentIcon.png";
-import Bar from "../../assets/image/BarIcon.png";
-import SPA from "../../assets/image/SpaIcon.png";
+import NTLogo from "../../assets/image/N_TLogo-removebg-preview.png";
 
 function Home() {
   const decouvrHotel = [
@@ -91,50 +91,6 @@ function Home() {
               </button>
             </li>
           ))}
-        </div>
-        <div className="w-100">
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet,
-            sapiente. Officiis quia quisquam facilis delectus cumque iure
-            impedit doloremque ipsum natus quas aliquam, dolorum facere
-            perferendis, ex dolore inventore dolorem.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet,
-            sapiente. Officiis quia quisquam facilis delectus cumque iure
-            impedit doloremque ipsum natus quas aliquam, dolorum facere
-            perferendis, ex dolore inventore dolorem.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet,
-            sapiente. Officiis quia quisquam facilis delectus cumque iure
-            impedit doloremque ipsum natus quas aliquam, dolorum facere
-            perferendis, ex dolore inventore dolorem.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet,
-            sapiente. Officiis quia quisquam facilis delectus cumque iure
-            impedit doloremque ipsum natus quas aliquam, dolorum facere
-            perferendis, ex dolore inventore dolorem.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet,
-            sapiente. Officiis quia quisquam facilis delectus cumque iure
-            impedit doloremque ipsum natus quas aliquam, dolorum facere
-            perferendis, ex dolore inventore dolorem.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet,
-            sapiente. Officiis quia quisquam facilis delectus cumque iure
-            impedit doloremque ipsum natus quas aliquam, dolorum facere
-            perferendis, ex dolore inventore dolorem.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet,
-            sapiente. Officiis quia quisquam facilis delectus cumque iure
-            impedit doloremque ipsum natus quas aliquam, dolorum facere
-            perferendis, ex dolore inventore dolorem.
-          </p>
         </div>
       </div>
     </>
