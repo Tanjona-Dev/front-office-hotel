@@ -92,6 +92,50 @@ function Home() {
             </li>
           ))}
         </div>
+        <div className="w-100">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet,
+            sapiente. Officiis quia quisquam facilis delectus cumque iure
+            impedit doloremque ipsum natus quas aliquam, dolorum facere
+            perferendis, ex dolore inventore dolorem.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet,
+            sapiente. Officiis quia quisquam facilis delectus cumque iure
+            impedit doloremque ipsum natus quas aliquam, dolorum facere
+            perferendis, ex dolore inventore dolorem.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet,
+            sapiente. Officiis quia quisquam facilis delectus cumque iure
+            impedit doloremque ipsum natus quas aliquam, dolorum facere
+            perferendis, ex dolore inventore dolorem.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet,
+            sapiente. Officiis quia quisquam facilis delectus cumque iure
+            impedit doloremque ipsum natus quas aliquam, dolorum facere
+            perferendis, ex dolore inventore dolorem.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet,
+            sapiente. Officiis quia quisquam facilis delectus cumque iure
+            impedit doloremque ipsum natus quas aliquam, dolorum facere
+            perferendis, ex dolore inventore dolorem.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet,
+            sapiente. Officiis quia quisquam facilis delectus cumque iure
+            impedit doloremque ipsum natus quas aliquam, dolorum facere
+            perferendis, ex dolore inventore dolorem.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet,
+            sapiente. Officiis quia quisquam facilis delectus cumque iure
+            impedit doloremque ipsum natus quas aliquam, dolorum facere
+            perferendis, ex dolore inventore dolorem.
+          </p>
+        </div>
       </div>
     </>
   );
