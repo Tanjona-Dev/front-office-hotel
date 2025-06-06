@@ -6,12 +6,6 @@ function Home() {
   return (
     <>
       <div>
-        <div>
-          <h1 className="text-4xl text-white bg-amber-500">
-            Bienvenue Sur Kambana Hotel
-          </h1>
-        </div>
-
         <div className="relative  overflow-hidden">
           <Motion.div
             initial={{ scale: 1.1 }}
