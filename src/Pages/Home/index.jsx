@@ -19,7 +19,7 @@ function Home() {
   ];
   return (
     <>
-      <div>
+      <div className="space-y-40">
         <div className="relative  overflow-hidden">
           <Motion.div
             initial={{ scale: 1.1 }}
