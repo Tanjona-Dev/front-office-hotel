@@ -127,13 +127,12 @@ function Home() {
         <br />
         {/* TYPE DE CHAMBRE NASA */}
         <div className="space-y-12">
-
-        <div>
-          <TypeDeChambre />
-        </div>
-        <div>
-          <Avantage />
-        </div>
+          <div>
+            <TypeDeChambre />
+          </div>
+          <div>
+            <Avantage />
+          </div>
         </div>
       </div>
     </>
