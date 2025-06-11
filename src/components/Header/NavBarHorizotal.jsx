@@ -49,14 +49,14 @@ function NavBarHorizotal({ refs }) {
   };
 
   return (
-    <div className="flex justify-around items-center max-lg:justify-between max-lg:mx-8">
+    <div className="flex justify-around items-center max-lg:justify-between max-lg:mx-8 shadow-xl">
       <div>
         <img src={LogoHotel} alt="" className="w-15 h-15" />
       </div>
 
       <div>
         <div
-          className="lg:hidden cursor-pointer hover:scale-x-105 transition relative"
+          className="lg:hidden cursor-pointer hover:scale-x-105 transition-all relative"
           onClick={() => setMenuIsOpen(!menuIsOpen)}
         >
           {menuIsOpen ? <X /> : <Menu size={30} />}
@@ -67,7 +67,7 @@ function NavBarHorizotal({ refs }) {
               {liensAffichesNavBar.map((liens, index) => (
                 <Motion.li
                   key={liens.id}
-                  className={`text-white text-lg`}
+                  className={`text-white text-lg cursor-pointer hover:text-black`}
                   onClick={() => handleClickLiensMenu(liens, index)}
                 >
                   {liens.nom}
