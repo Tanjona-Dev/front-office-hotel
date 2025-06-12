@@ -19,8 +19,8 @@ function Home() {
   ];
   return (
     <>
-      <div className="space-y-40">
-        <div className="relative  overflow-hidden">
+      <div>
+        <div className="relative overflow-hidden">
           <Motion.div
             initial={{ scale: 1.1 }}
             animate={{ scale: 1 }}
@@ -45,7 +45,7 @@ function Home() {
           >
             <img
               src={NTLogo}
-              className=" md:w-50 lh-auto drop-shadow-lg mt-15 pb-1"
+              className=" md:w-50 max-md:w-50 lh-auto drop-shadow-lg mt-15 pb-1"
               alt="Logo N&T"
             />
           </Motion.div>
@@ -57,16 +57,16 @@ function Home() {
               stiffness: 50,
               delay: 1,
             }}
-            className="absolute top-1/3  max-sm:top-1/2  max-sm:w-90 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-bold text-5xl "
+            className="absolute top-1/3 max-sm:top-1/2 max-sm:w-90 max-lg:top-3/5 lg:top-2/5 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-bold text-5xl "
           >
-            <h1 className="text-3xl md:text-5xl lg:text-6xl  font-bold text-white ">
+            <h1 className="text-3xl md:text-5xl lg:text-5xl max-lg:w-[125%] lg:w-[110%] font-bold text-white ">
               Bienvenue au N&T Hotel
             </h1>
             <Motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.5 }}
-              className="mt-2 text-2xl md:text-xl text-center text-white font-medium italic"
+              className="mt-2 text-2xl md:text-xl max-md:text-xl text-center text-white font-medium italic"
             >
               Votre séjour d'exception
             </Motion.p>
@@ -80,7 +80,7 @@ function Home() {
               stiffness: 50,
               delay: 2,
             }}
-            className="absolute bottom-50 max-sm:bottom-10 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center animate-bounce"
+            className="absolute bottom-50 max-sm:bottom-10 max-lg:-bottom-15 lg:bottom-20  xl:bottom-40 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center animate-bounce"
           >
             <p className="text-white text-sm font-bold uppercase">Découvrir</p>
             <div className="inline-flex border-5 border-white p-2 rounded-full mt-5 animate-bounce">
@@ -90,7 +90,7 @@ function Home() {
         </div>
 
         <Motion.div
-          className="relative mx-auto w-[65%] max-xl: max-xl:mb-10 max-xl:my-10 -my-25 max-sm:my-10 text-center bg-teal-100/10 backdrop-blur-xs border-5 p-10 max-sm:p-2 rounded-2xl mb-15"
+          className="relative mx-auto w-[65%] max-xl: max-xl:mb-10 max-xl:my-10 max-2xl:-mt-40 -my-25 max-sm:my-10 text-center bg-teal-100/10 backdrop-blur-xs border-5 p-10 max-sm:p-2 rounded-2xl mb-15"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
@@ -107,9 +107,9 @@ function Home() {
                   delay: index * 0.5,
                   ease: "easeOut",
                 }}
-                className={`list-none px-20 2xl:px-auto max-xl:border-none  ${
+                className={`list-none px-20 2xl:px-auto max-xl:border-none ${
                   index !== 0
-                    ? "border-l-5 border-teal-800 max-sm:border-l-0 max-sm:border-t-5 max-sm:border-teal-800 max-sm:pt-4 max-sm:mt-4"
+                    ? "border-l-5 border-teal-800 max-sm:border-l-0 max-2xl:border-l-0 max-sm:border-t-5 max-sm:border-teal-800 max-sm:pt-4 max-sm:mt-4"
                     : ""
                 }`}
               >
