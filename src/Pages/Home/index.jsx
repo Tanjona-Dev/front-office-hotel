@@ -1,3 +1,4 @@
+import OurAsset from "./ourAsset";
 import Avantage from "./avantages";
 import OurServices from "./ourService";
 import { ArrowDown } from "lucide-react";
@@ -103,7 +104,7 @@ function Home() {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{
-                  duration: 2,
+                  duration: 1,
                   delay: index * 0.5,
                   ease: "easeOut",
                 }}
@@ -138,6 +139,9 @@ function Home() {
         </div>
         <div>
           <OurServices />
+        </div>
+        <div>
+          <OurAsset />
         </div>
       </div>
     </>

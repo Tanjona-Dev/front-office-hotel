@@ -8,7 +8,7 @@ import ServiceBlanchisserie from "../../assets/image/Service_Blanchisserie.jpg";
 export default function OurServices() {
   return (
     <>
-      <div className="relative mb-100">
+      <div className="relative mb-50 max-sm:mb-330 max-lg:mb-180">
         <div className="relative">
           <img
             src={Service}
@@ -36,6 +36,7 @@ export default function OurServices() {
                max-xl:grid-cols-4 max-xl:ml-0
                gap-4 max-w-7xl mx-auto 
                max-xl:translate-y-12
+               max-lg:translate-y-150
                max-sm:translate-y-300">
               <Motion.div
                 initial={{ y: 100, opacity: 0 }}
