@@ -2,14 +2,12 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
 export function AutoScrollImage({ tableauImage }) {
   return (
-    <div className="w-100">
+    <div>
       <Carousel
         plugins={[
           Autoplay({
@@ -20,12 +18,14 @@ export function AutoScrollImage({ tableauImage }) {
         <CarouselContent>
           {tableauImage?.map((items, index) => (
             <CarouselItem key={index}>
-              <img src={items} alt="" className="w-200 h-164" />
+              <img
+                src={items}
+                alt="chambres models"
+                className="rounded shadow w-200 max-sm:ml-7 max-sm:pl-0 max-lg:w-[90%] h-155 max-sm:max-w-85 max-sm:h-80 max-sm:mx-auto max-sm:rounded"
+              />
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
       </Carousel>
     </div>
   );

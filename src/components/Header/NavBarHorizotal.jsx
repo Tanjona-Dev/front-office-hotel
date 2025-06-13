@@ -62,7 +62,7 @@ function NavBarHorizotal({ refs }) {
           {menuIsOpen ? <X /> : <Menu size={30} />}
         </div>
         {menuIsOpen && (
-          <Motion.div className="absolute top-15 bg-blue-500 opacity-88 right-0 w-full h-screen z-100 py-3 text-center">
+          <Motion.div className="absolute top-15 bg-blue-500 opacity-88 right-0 w-full h-screen z-200 py-3 text-center">
             <ul className="flex flex-col gap-4">
               {liensAffichesNavBar.map((liens, index) => (
                 <Motion.li
