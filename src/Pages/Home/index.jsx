@@ -1,6 +1,7 @@
 import OurAsset from "./ourAsset";
 import Avantage from "./avantages";
 import OurServices from "./ourService";
+import Testimonial from "./testimonial";
 import { ArrowDown } from "lucide-react";
 import TypeDeChambre from "./typeDeChambre";
 import Bar from "../../assets/image/bar.png";
@@ -142,6 +143,9 @@ function Home() {
         </div>
         <div>
           <OurAsset />
+        </div>
+        <div>
+          <Testimonial />
         </div>
       </div>
     </>

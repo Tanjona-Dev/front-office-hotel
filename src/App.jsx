@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <div>
-        <div className="sticky top-0 z-50 bg-white/80 backdrop-blur-sm supports-backdrop-blur:bg-white/60 w-full">
+        <div className="sticky top-0 z-50 bg-white/60 backdrop-blur-sm supports-backdrop-blur:bg-white/60 w-full">
           <NavBarHorizotal refs={refs} />
         </div>
         <div ref={refs.homeRef} className="overflow-x-hidden">

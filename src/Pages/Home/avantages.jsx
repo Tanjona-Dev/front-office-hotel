@@ -125,7 +125,7 @@ function Avantage() {
             <li>✔Plage privée ou peu fréquentée(cocktail, panier local…)</li>
           </ul>
         </Motion.div>
-        <Motion.div className="sm:hidden m-auto">
+        <Motion.div className="sm:hidden m-auto z-50">
           <Button onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? "Fermer" : "En savoir plus"}
           </Button>

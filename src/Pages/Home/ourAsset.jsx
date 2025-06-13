@@ -44,12 +44,12 @@ export default function OurAsset() {
             Le <span className="font-semibold">N&T Hôtel</span> vous invite à
             découvrir une cuisine savoureuse et variée mêlant gastronomie
             internationale, cuisine fusion et spécialités locales.{" "}
-            <p className="mt-10 font-semibold text-amber-700">
-              Notre restaurant met un point d'honneur à vous offrir le meilleur
-              de la restauration à Antananarivo. Prenez un moment de détente au
-              bar terrasse et laissez-vous séduire par une des plus belles vues
-              panoramiques sur la capitale.
-            </p>
+          </p>
+          <p className="mt-10 font-semibold text-amber-700">
+            Notre restaurant met un point d'honneur à vous offrir le meilleur de
+            la restauration à Antananarivo. Prenez un moment de détente au bar
+            terrasse et laissez-vous séduire par une des plus belles vues
+            panoramiques sur la capitale.
           </p>
         </Motion.div>
       </div>
