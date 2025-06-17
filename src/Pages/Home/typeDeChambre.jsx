@@ -82,7 +82,7 @@ function TypeDeChambre() {
               {tableauImage2.map((image, index) => (
                 <div
                   key={index}
-                  className="aspect-square shadow-2xl overflow-hidden rounded hover:overflow-hidden"
+                  className="aspect-square shadow-2xl overflow-hidden rounded hover:overflow-hidden xl:mt-10"
                 >
                   <img
                     src={image}
@@ -98,7 +98,7 @@ function TypeDeChambre() {
             initial={{ x: 150, opacity: 0, y: 150, scaleY: 0 }}
             whileInView={{ x: 0, opacity: 1, y: 0, scaleY: 1 }}
             transition={{ duration: 1 }}
-            className="w-full lg:flex-1 lg:max-w-2xl mt-8 lg:mt-0"
+            className="w-full lg:flex-1 lg:max-w-2xl xl:h-190 mt-8 lg:mt-0"
           >
             <AutoScrollImage tableauImage={tableauImage} />
           </Motion.div>

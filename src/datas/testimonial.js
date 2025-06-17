@@ -70,6 +70,3 @@ export const testimonials = [
     testimonial: "Globalement très content de mon achat. Le produit en lui-même est excellent et fonctionne parfaitement. Seul point négatif : l'emballage était légèrement abîmé à l'arrivée, heureusement sans conséquence sur le contenu. Un peu plus d'attention sur ce point rendrait l'expérience parfaite !"
   }
 ];
-
-// Exemple d'utilisation :
-console.log(testimonials[0].name); // Affiche "Sophie Martin"
