@@ -7,7 +7,7 @@ import { Bath, CoffeeIcon, ParkingCircle, Wifi } from "lucide-react";
 function Avantage() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="bg-teal-900 text-white flex flex-col gap-12 py-5">
+    <div className="bg-teal-900 text-white flex flex-col gap-12 py-15">
       <div className="text-center">
         <h1 className="text-4xl mx-auto max-md:text-center">
           Confort et prestations incluses
@@ -53,17 +53,17 @@ function Avantage() {
           <p className="mt-2 text-lg">Spa & bien-être</p>
         </div>
       </Motion.div>
-      <div className="grid grid-cols-4 xl:gap-12 max-md:grid-cols-2 mx-auto max-sm:px-5 max-sm:grid-cols-1 max-sm:gap-5">
+      <div className="grid grid-cols-4 xl:gap-12 max-md:grid-cols-2 mx-auto max-sm:px-5 max-sm:grid-cols-1 max-sm:gap-5 xl:px-8">
         <Motion.div
           initial={{ x: -150 }}
           whileInView={{ x: 0 }}
           transition={{ duration: 1.5 }}
-          className="space-y-4"
+          className="space-y-8"
         >
           <h1 className="font-bold text-3xl max-sm:font-semibold max-md:text-2xl max-md:text-center">
             Loisirs & Activités
           </h1>
-          <ul className="space-y-3">
+          <ul className="space-y-5">
             <li>✔Location de paddle, kayak ou snorkeling</li>
             <li>✔Excursions en bateau ou plongée organisées </li>
             <li>✔Massages et spa avec vue mer</li>
@@ -75,12 +75,12 @@ function Avantage() {
           initial={{ x: -150 }}
           whileInView={{ x: 0 }}
           transition={{ duration: 1 }}
-          className="space-y-4"
+          className="space-y-8"
         >
           <h1 className="font-bold text-3xl max-sm:font-semibold max-md:text-2xl max-md:text-center">
             Restauration & Services
           </h1>
-          <ul className="space-y-3">
+          <ul className="space-y-5">
             <li>✔Petit-déjeuner inclus / buffet en bord de mer</li>
             <li>✔Restaurant local avec vue océan </li>
             <li>✔Bar/lounge avec cocktails tropicaux</li>
@@ -93,13 +93,13 @@ function Avantage() {
           initial={{ x: 150 }}
           whileInView={{ x: 0 }}
           transition={{ duration: 1 }}
-          className={cn("space-y-4 max-sm:hidden ", isOpen && "max-sm:block")}
+          className={cn("space-y-8 max-sm:hidden ", isOpen && "max-sm:block")}
         >
           <h1 className="font-bold text-3xl max-sm:font-semibold max-md:text-2xl max-md:text-center">
             {" "}
             Offres & Avantages
           </h1>
-          <ul className="space-y-3">
+          <ul className="space-y-5">
             <li>✔Offres spéciales pour les réservations directes</li>
             <li>✔Tarifs réduits hors saison</li>
             <li>✔Séjour offert pour les enfants de moins de X ans</li>
@@ -112,12 +112,12 @@ function Avantage() {
           initial={{ x: 150 }}
           whileInView={{ x: 0 }}
           transition={{ duration: 1.5 }}
-          className={cn("space-y-4 max-sm:hidden ", isOpen && "max-sm:block")}
+          className={cn("space-y-8 max-sm:hidden ", isOpen && "max-sm:block")}
         >
           <h1 className="font-bold text-3xl max-sm:font-semibold max-md:text-2xl max-md:text-center">
             Localisation & Expérience
           </h1>
-          <ul className="space-y-3">
+          <ul className="space-y-5">
             <li>✔Accès direct à la plage (pas besoin de voiture ou navette)</li>
             <li>✔Vue mer depuis les chambres</li>
             <li>✔Couchers de soleil spectaculaires</li>
