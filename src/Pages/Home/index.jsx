@@ -123,7 +123,14 @@ function Home() {
               text: " Laissez-vous envelopper par les soins traditionnels aux huiles naturelles locales",
             },
           ].map((item, index) => (
-            <div
+            <Motion.div
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{
+                duration: 0.8,
+                ease: "easeOut",
+                delay: 0.2,
+              }}
               key={index}
               onClick={() => navigate(item.path)}
               className="relative cursor-pointer bg-white/50 p-5"
@@ -133,14 +140,14 @@ function Home() {
                 alt=""
                 className="w-full h-55 mx-auto hover:brightness-70 hover:contrast-125 transition-all duration-300"
               />
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1 flex flex-col items-center bg-white/80 z-20 shadow-lg p-5 w-[calc(100%-5rem)]">
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1 flex flex-col items-center bg-white/80 z-20  p-5 w-[calc(100%-5rem)]">
                 <img src={item.logo} alt="" className="w-30" />
                 <h1 className="uppercase mt-5 font-bold text-2xl text-[#D2A76F]">
                   {item.title}
                 </h1>
                 <p className="text-center opacity-80 mt-5">{item.text}</p>
               </div>
-            </div>
+            </Motion.div>
           ))}
 
           {/* Premier élément
