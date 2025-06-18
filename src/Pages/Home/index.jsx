@@ -13,6 +13,7 @@ import NTLogo from "../../assets/image/N_TLogo.png";
 import Chambre from "../../assets/image/beachRoom.jpg";
 import NTLogomini from "../../assets/image/N_TLogo_mini.png";
 import Restaurant from "../../assets/image/beachRestaurant.jpg";
+import NavBarHorizotal from "../../components/Header/NavBarHorizotal";
 
 function Home() {
   const navigate = useNavigate();
@@ -30,6 +31,9 @@ function Home() {
               alt="home.image"
               className="block w-full h-screen"
             />
+            <div className="absolute top-0 w-full">
+              <NavBarHorizotal />
+            </div>
           </Motion.div>
           <Motion.div
             initial={{ y: -20, opacity: 0 }}
