@@ -18,13 +18,13 @@ export default function OurAsset() {
           </h1>
           <p className="text-xl">
             Le <span className="font-semibold">N&T Hôtel</span> est un
-            établissement haut de gamme situé en plein cœur de la ville. Grâce à
-            sa proximité avec les quartiers d’affaires, les sites touristiques
-            et les lieux de vie locale, il constitue un lieu parfait pour allier
-            travail et découverte. Nos chambres élégantes et confortables vous
-            accueillent pour un séjour agréable, tandis que vous pourrez
-            profiter de nombreux services tels que notre spa relaxant ou notre
-            salle de fitness entièrement équipée.
+            établissement haut de gamme niché au bord de la mer, dans un cadre
+            côtier enchanteur. Sa situation privilégiée, à proximité des plages,
+            des activités nautiques et des marchés locaux, en fait un lieu idéal
+            pour allier détente, découverte et évasion. Nos chambres élégantes
+            et confortables offrent une vue apaisante sur l’océan, et vous
+            pourrez profiter de nombreux services, tels qu’un spa face à la mer
+            ou une salle de fitness ouverte sur l’horizon.
           </p>
         </Motion.div>
 

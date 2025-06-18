@@ -4,25 +4,22 @@ import OurServices from "./ourService";
 import Testimonial from "./testimonial";
 import { ArrowDown } from "lucide-react";
 import TypeDeChambre from "./typeDeChambre";
-import Bar from "../../assets/image/bar.png";
-import SPA from "../../assets/image/spa.png";
+import { useNavigate } from "react-router-dom";
 import { motion as Motion } from "framer-motion";
 import home1 from "../../assets/image/Login.jpg";
-import Chambre from "../../assets/image/hotel.png";
-import Restaurent from "../../assets/image/restaurant.png";
-import NTLogo from "../../assets/image/N_TLogo-removebg-preview.png";
+import SPA from "../../assets/image/beachSpa.jpg";
+import Bar from "../../assets/image/beachBar.jpg";
+import NTLogo from "../../assets/image/N_TLogo.png";
+import Chambre from "../../assets/image/beachRoom.jpg";
+import NTLogomini from "../../assets/image/N_TLogo_mini.png";
+import Restaurant from "../../assets/image/beachRestaurant.jpg";
 
 function Home() {
-  const decouvrHotel = [
-    { name: "Chambre", path: "/", logo: <img src={Chambre} /> },
-    { name: "Restaurant", path: "/", logo: <img src={Restaurent} /> },
-    { name: "Bar", path: "/", logo: <img src={Bar} /> },
-    { name: "Spa", path: "/", logo: <img src={SPA} /> },
-  ];
+  const navigate = useNavigate();
   return (
     <>
-      <div>
-        <div className="relative overflow-hidden">
+      <div className="relative">
+        <div className="relative">
           <Motion.div
             initial={{ scale: 1.1 }}
             animate={{ scale: 1 }}
@@ -92,7 +89,143 @@ function Home() {
         </div>
 
         <Motion.div
-          className="relative mx-auto w-[65%] max-xl: max-xl:mb-10 max-xl:my-10 max-2xl:-mt-40 -my-25 max-sm:my-10 text-center bg-teal-100/10 backdrop-blur-xs border-5 p-10 max-sm:p-2 rounded-2xl mb-15"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="grid grid-cols-4 gap-x-10 relative -mt-40 z-10 mb-60 mx-20"
+        >
+          {[
+            {
+              title: "Chambre",
+              image: Chambre,
+              logo: NTLogomini,
+              path: "/ChambreType",
+              text: " Découvrez le confort raffiné de notre chambre, alliant élégance, sérénité et services haut de gamme.",
+            },
+            {
+              title: "Bar",
+              image: Bar,
+              logo: NTLogomini,
+              text: "Dégustez nos cocktails artisanaux dans un cadre chaleureux, au rythme de la musique malagasy et lounge.",
+            },
+            {
+              title: "Restaurant",
+              image: Restaurant,
+              logo: NTLogomini,
+              path: "/Restaurant",
+              text: "  Des mets traditionnels revisités avec finesse, dans un cadre chaleureux et raffiné.",
+            },
+            {
+              title: "Spa",
+              image: SPA,
+              logo: NTLogomini,
+              text: " Laissez-vous envelopper par les soins traditionnels aux huiles naturelles locales",
+            },
+          ].map((item, index) => (
+            <div
+              key={index}
+              onClick={() => navigate(item.path)}
+              className="relative cursor-pointer bg-white/50 p-5"
+            >
+              <img
+                src={item.image}
+                alt=""
+                className="w-full h-55 mx-auto hover:brightness-70 hover:contrast-125 transition-all duration-300"
+              />
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1 flex flex-col items-center bg-white/80 z-20 shadow-lg p-5 w-[calc(100%-5rem)]">
+                <img src={item.logo} alt="" className="w-30" />
+                <h1 className="uppercase mt-5 font-bold text-2xl text-[#D2A76F]">
+                  {item.title}
+                </h1>
+                <p className="text-center opacity-80 mt-5">{item.text}</p>
+              </div>
+            </div>
+          ))}
+
+          {/* Premier élément
+          <div
+            onClick={() => navigate("/ChambreType")}
+            className="relative cursor-pointer bg-white/50 p-5"
+          >
+            <img
+              src={Chambre}
+              alt="Chambre"
+              className="w-full h-55 mx-auto hover:brightness-70 hover:contrast-125 transition-all duration-300"
+            />
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1 flex flex-col items-center bg-white/80 z-20 shadow-lg p-5 w-[calc(100%-5rem)]">
+              <img src={NTLogomini} alt="Logo N&T" className="w-30" />
+              <h1 className="uppercase mt-5">Chambre</h1>
+              <p className="text-center opacity-80 mt-5">
+                Découvrez le confort raffiné de notre chambre, alliant élégance,
+                sérénité et services haut de gamme.
+              </p>
+            </div>
+          </div> */}
+
+          {/* Deuxième élément
+          <div
+            // onClick={() => navigate("/ChambreType")}
+            className="relative cursor-pointer bg-white/50 p-5"
+          >
+            <img
+              src={Bar}
+              alt="Bar"
+              className="w-full h-55 mx-auto hover:brightness-70 hover:contrast-125 transition-all duration-300"
+            />
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1 flex flex-col items-center bg-white/80 z-20 shadow-lg p-5 w-[calc(100%-5rem)]">
+              <img src={NTLogomini} alt="Logo N&T" className="w-30" />
+              <h1 className="uppercase">Bar</h1>
+              <p className="text-center opacity-80 mt-5">
+                Dégustez nos cocktails artisanaux dans un cadre chaleureux, au
+                rythme de la musique malagasy et lounge.
+              </p>
+            </div>
+          </div> */}
+
+          {/* Troisième élément
+          <div
+            onClick={() => navigate("/Restaurant")}
+            className="relative cursor-pointer bg-white/50 p-5"
+          >
+            <img
+              src={Restaurant}
+              alt="Restaurant"
+              className="w-full h-55 mx-auto hover:brightness-70 hover:contrast-125 transition-all duration-300"
+            />
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1 flex flex-col items-center bg-white/80 z-20 shadow-lg p-5 w-[calc(100%-5rem)]">
+              <img src={NTLogomini} alt="Logo N&T" className="w-30" />
+              <h1 className="uppercase mt-5">Restaurant</h1>
+              <p className="text-center opacity-80 mt-5">
+                Des mets traditionnels revisités avec finesse, dans un cadre
+                chaleureux et raffiné.
+              </p>
+            </div>
+          </div> */}
+
+          {/* Quatrième élément
+          <div
+            // onClick={() => navigate("/Restaurant")}
+            className="relative cursor-pointer bg-white/50 p-5"
+          >
+            <img
+              src={SPA}
+              alt="SPA"
+              className="w-full h-55 mx-auto hover:brightness-70 hover:contrast-125 transition-all duration-300"
+            />
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1 flex flex-col items-center bg-white/80 z-20 shadow-lg p-5 w-[calc(100%-5rem)]">
+              <img src={NTLogomini} alt="Logo N&T" className="w-30" />
+              <h1 className="uppercase">Spa</h1>
+              <p className="text-center opacity-80 mt-5">
+                Laissez-vous envelopper par les soins traditionnels aux huiles
+                naturelles locales.
+              </p>
+            </div>
+          </div> */}
+        </Motion.div>
+
+        {/* <Motion.div
+          className="relative mx-auto w-[65%] max-xl: max-xl:mb-10 max-xl:my-10 max-2xl:-mt-40 -my-25 max-sm:my-10 text-center  p-10 max-sm:p-2 rounded-2xl mb-15"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
@@ -111,23 +244,26 @@ function Home() {
                 }}
                 className={`list-none px-20 2xl:px-auto max-xl:border-none ${
                   index !== 0
-                    ? "border-l-5 border-teal-800 max-sm:border-l-0 max-2xl:border-l-0 max-sm:border-t-5 max-sm:border-teal-800 max-sm:pt-4 max-sm:mt-4"
+                    ? " max-sm:border-l-0 max-2xl:border-l-0 max-sm:border-t-5 max-sm:border-teal-800 max-sm:pt-4 max-sm:mt-4"
                     : ""
                 }`}
               >
-                <Motion.button
-                  className="w-25 h-auto max-sm:w-15 md:w-15 cursor-pointer flex flex-col gap-y-5 items-center"
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <span className="text-3xl">{dHotel.logo}</span>
-                  <span className="font-bold text-2xl max-sm:text-xl text-teal-900 uppercase tracking-wide">
-                    {dHotel.name}
-                  </span>
-                </Motion.button>
+                <Link to={dHotel.path}>
+                  <Motion.button
+                    className="w-25 h-auto max-sm:w-15 md:w-15 cursor-pointer flex flex-col gap-y-5 items-center"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <span className="">{dHotel.logo}</span>
+
+                    <span className="font-bold text-2xl max-sm:text-xl text-teal-900 uppercase tracking-wide">
+                      {dHotel.name}
+                    </span>
+                  </Motion.button>
+                </Link>
               </Motion.li>
             ))}
           </div>
-        </Motion.div>
+        </Motion.div> */}
 
         {/* TYPE DE CHAMBRE NASA */}
         <div className="space-y-12">

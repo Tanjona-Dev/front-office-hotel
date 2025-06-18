@@ -24,7 +24,7 @@ export default function OurServices() {
               transition={{ duration: 1, ease: "easeOut" }}
               className="text-5xl text-white max-sm:text-3xl"
             >
-              Our Services
+              Notre Services
             </Motion.h1>
           </div>
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion as Motion } from "framer-motion";
-import LogoHotel from "../../assets/image/N_TLogo-removebg-preview.png";
+import LogoHotel from "../../assets/image/N_TLogo.png";
 
 // Ajout des styles sur chaques liens dans le NavBarHorizotal
 function addStyleLinkIndex(index, setLienClick) {
