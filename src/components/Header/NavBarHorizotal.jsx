@@ -15,6 +15,7 @@ import massageImg from "../../assets/NavBar-img/massage.jpeg";
 import restoImg from "../../assets/NavBar-img/restoPlage.jpeg";
 import loungeImg from "../../assets/NavBar-img/loungeBar.jpeg";
 import { motion as Motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const roomType = [
   {
@@ -29,12 +30,13 @@ const roomType = [
 ];
 // menu content
 function DisplayMenuContent({
-  locationLink,
-  setIsHover,
   isHover,
-  setIsHover2,
   isHover2,
+  setIsHover,
+  setIsHover2,
+  locationLink,
 }) {
+  const navigate = useNavigate();
   const LinkArrow = [
     {
       name: "RESERVATION",
@@ -92,7 +94,10 @@ function DisplayMenuContent({
             de restauration internationale, fusion et régionale vous attends
             dans nos différents restaurants.
           </p>
-          <button className="border border-black/50 p-3 mx-auto w-[50%] max-lg:text-sm max-lg:w-[75%] rounded-full hover:bg-black/80 hover:text-white cursor-pointer transition-all duration-150">
+          <button
+            onClick={() => navigate("/HotelDetails")}
+            className="border border-black/50 p-3 mx-auto w-[50%] max-lg:text-sm max-lg:w-[75%] rounded-full hover:bg-black/80 hover:text-white cursor-pointer transition-all duration-150"
+          >
             DECOUVRIR L'HOTEL
           </button>
         </div>

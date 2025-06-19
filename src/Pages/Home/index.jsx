@@ -10,12 +10,12 @@ import home1 from "../../assets/image/Login.jpg";
 import SPA from "../../assets/image/beachSpa.jpg";
 import Bar from "../../assets/image/beachBar.jpg";
 import NTLogo from "../../assets/image/N_TLogo.png";
-import BarLogo from "../../assets/image/BAR_Logo.png";
-import SpaLogo from "../../assets/image/SPA_Logo.png";
+import BarLogo from "../../assets/image/BARLogo.png";
+import SpaLogo from "../../assets/image/SPALogo.png";
 import Chambre from "../../assets/image/beachRoom.jpg";
-import ChambreLogo from "../../assets/image/Chambre_Logo.png";
+import ChambreLogo from "../../assets/image/ChambreLogo.png";
 import Restaurant from "../../assets/image/beachRestaurant.jpg";
-import RestaurantLogo from "../../assets/image/Restaurant_Logo.png";
+import RestaurantLogo from "../../assets/image/RestaurantLogo.png";
 import NavBarHorizotal from "../../components/Header/NavBarHorizotal";
 
 function Home() {
