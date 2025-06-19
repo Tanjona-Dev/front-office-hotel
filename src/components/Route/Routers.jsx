@@ -1,24 +1,10 @@
-// import Home from "../../Pages/Home";
-// import Landing from "../../Pages/Landing";
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-// export default function Routers() {
-//   return (
-//     <Router>
-//       <Routes>
-//         <Route path="/" element={<Home />} />
-//         <Route path="/Landing" element={<Landing />} />
-//       </Routes>
-//     </Router>
-//   );
-// }
-
+import Bar from "../../Pages/Bar";
+import Spa from "../../Pages/Spa";
 import Home from "../../Pages/Home";
-import Return from "../Return/Return";
 import LayoutWithNavbar from "../Header/LayoutNavbar";
 import ChambreType from "../../Pages/Chambres/Chambres";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Restaurant from "../../Pages/Restaurant/Restaurant";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 export default function Routers() {
   return (
@@ -32,22 +18,10 @@ export default function Routers() {
             </LayoutWithNavbar>
           }
         />
-        <Route
-          path="/ChambreType"
-          element={
-            <Return>
-              <ChambreType />
-            </Return>
-          }
-        />
-        <Route
-          path="/Restaurant"
-          element={
-            <Return>
-              <Restaurant />
-            </Return>
-          }
-        />
+        <Route path="/ChambreType" element={<ChambreType />} />
+        <Route path="/Bar" element={<Bar />} />
+        <Route path="/Restaurant" element={<Restaurant />} />
+        <Route path="/Spa" element={<Spa />} />
       </Routes>
     </Router>
   );

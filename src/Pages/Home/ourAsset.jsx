@@ -3,7 +3,7 @@ import { motion as Motion } from "framer-motion";
 export default function OurAsset() {
   return (
     <>
-      <div className="grid grid-cols-2 max-sm:grid-cols-1 gap-x-30 max-sm:gap-y-10 max-lg:gap-x-10 max-sm:px-4 max-lg:px-10 px-40 pb-100">
+      <div className="grid grid-cols-2 max-sm:grid-cols-1 gap-x-30 max-sm:gap-y-10 max-lg:gap-x-10 max-sm:px-4 max-lg:px-10 px-40 pb-20">
         <Motion.div
           initial={{ x: -200, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
@@ -45,7 +45,7 @@ export default function OurAsset() {
             découvrir une cuisine savoureuse et variée mêlant gastronomie
             internationale, cuisine fusion et spécialités locales.{" "}
           </p>
-          <p className="mt-10 font-semibold text-amber-700">
+          <p className="mt-10 font-semibold text-[#D2A76F]">
             Notre restaurant met un point d'honneur à vous offrir le meilleur de
             la restauration à Antananarivo. Prenez un moment de détente au bar
             terrasse et laissez-vous séduire par une des plus belles vues

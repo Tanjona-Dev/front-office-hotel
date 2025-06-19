@@ -29,7 +29,8 @@ export default function OurServices() {
           </div>
 
           <div className="absolute -bottom-20 w-full px-8 max-xl:px-2">
-            <div className="grid grid-cols-4 
+            <div
+              className="grid grid-cols-4 
                max-sm:grid-cols-1 max-sm:mx-[8%]
                max-md:grid-cols-2 max-md:ml-[10%]
                max-lg:grid-cols-2 max-lg:ml-[8%]
@@ -37,101 +38,52 @@ export default function OurServices() {
                gap-4 max-w-7xl mx-auto 
                max-xl:translate-y-12
                max-lg:translate-y-150
-               max-sm:translate-y-300">
-              <Motion.div
-                initial={{ y: 100, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{
-                  duration: 0.8,
-                  ease: "easeOut",
-                  delay: 0.2,
-                }}
-                className="bg-white w-70 h-auto max-xl:w-63 max-lg:w-80 max-md:w-63 max-sm:w-80 text-center border-2 border-amber-600 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-              >
-                <img
-                  src={ServiceChambre}
-                  alt="Service de chambre"
-                  className="w-full h-50 object-cover mb-4"
-                />
-                <h2 className="text-2xl uppercase font-bold text-amber-700 mb-2">
-                  Service de chambre
-                </h2>
-                <p className="px-2">
-                  Livraison de repas, boissons, petit-déjeuner ou articles
-                  divers directement en chambre.
-                </p>
-              </Motion.div>
-
-              <Motion.div
-                initial={{ y: 100, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{
-                  duration: 0.8,
-                  ease: "easeOut",
-                  delay: 0.2,
-                }}
-                className="bg-white w-70 h-auto max-xl:w-63 max-lg:w-80 max-md:w-63 max-sm:w-80 text-center border-2 border-amber-600 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-              >
-                <img
-                  src={ServiceBlanchisserie}
-                  alt="Service de chambre"
-                  className="w-full h-50 object-cover mb-4"
-                />
-                <h2 className="text-2xl uppercase font-bold text-amber-700 mb-2">
-                  Blanchisserie et repassage
-                </h2>
-                <p className="px-2">
-                  Prise en charge du linge des clients : lavage, séchage,
-                  repassage.
-                </p>
-              </Motion.div>
-
-              <Motion.div
-                initial={{ y: 100, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{
-                  duration: 0.8,
-                  ease: "easeOut",
-                  delay: 0.2,
-                }}
-                className="bg-white w-70 h-auto max-xl:w-63 max-lg:w-80 max-md:w-63 max-sm:w-80 text-center border-2 border-amber-600 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-              >
-                <img
-                  src={ServiceSpa}
-                  alt="Service de chambre"
-                  className="w-full h-50 object-cover mb-4"
-                />
-                <h2 className="text-2xl uppercase font-bold text-amber-700 mb-2">
-                  Spa et bien-être
-                </h2>
-                <p className="px-2">
-                  Soins corporels, massages, sauna, hammam, jacuzzi.
-                </p>
-              </Motion.div>
-
-              <Motion.div
-                initial={{ y: 100, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{
-                  duration: 0.8,
-                  ease: "easeOut",
-                  delay: 0.2,
-                }}
-                className="bg-white w-70 h-auto max-xl:w-63 max-lg:w-80 max-md:w-63 max-sm:w-80 text-center border-2 border-amber-600 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-              >
-                <img
-                  src={ServiceTransport}
-                  alt="Service de chambre"
-                  className="w-full h-50 object-cover mb-4"
-                />
-                <h2 className="text-2xl uppercase font-bold text-amber-700 mb-2">
-                  Navette ou transport aéroportuaire
-                </h2>
-                <p className="px-2">
-                  Service de transfert depuis/vers l’aéroport ou d’autres
-                  destinations locales.
-                </p>
-              </Motion.div>
+               max-sm:translate-y-300"
+            >
+              {[
+                {
+                  image: ServiceChambre,
+                  title: "Service de chambre",
+                  text: "Livraison de repas, boissons, petit-déjeuner ou articles divers directement en chambre.",
+                },
+                {
+                  image: ServiceBlanchisserie,
+                  title: "Blanchisserie et repassage",
+                  text: "Livraison de repas, boissons, petit-déjeuner ou articles divers directement en chambre.",
+                },
+                {
+                  image: ServiceSpa,
+                  title: "Spa et bien-être",
+                  text: "Soins corporels, massages, sauna, hammam, jacuzzi.",
+                },
+                {
+                  image: ServiceTransport,
+                  title: "Navette ou transport aéroportuaire",
+                  text: "Service de transfert depuis/vers l’aéroport ou d’autres destinations locales.",
+                },
+              ].map((item, index) => (
+                <Motion.div
+                  initial={{ y: 100, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{
+                    duration: 0.8,
+                    ease: "easeOut",
+                    delay: 0.2,
+                  }}
+                  key={index}
+                  className="bg-white w-70 h-auto max-xl:w-63 max-lg:w-80 max-md:w-63 max-sm:w-80 text-center border-2 border-[#D2A76F] p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                >
+                  <img
+                    src={item.image}
+                    alt=""
+                    className="w-full h-50 object-cover mb-4"
+                  />
+                  <h2 className="text-2xl uppercase font-bold text-[#D2A76F] mb-2">
+                    {item.title}
+                  </h2>
+                  <p className="px-2">{item.text}</p>
+                </Motion.div>
+              ))}
             </div>
           </div>
         </div>
