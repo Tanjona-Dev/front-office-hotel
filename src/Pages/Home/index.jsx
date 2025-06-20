@@ -34,9 +34,7 @@ function Home() {
               alt="home.image"
               className="block w-full h-screen"
             />
-            <div className="absolute top-0 w-full">
-              <NavBarHorizotal />
-            </div>
+
           </Motion.div>
           <Motion.div
             initial={{ y: -20, opacity: 0 }}

@@ -11,7 +11,7 @@ function App() {
     //   <Routers />
     // </>
     <>
-      <div>
+      <div className="relative">
         <div ref={refs.homeRef} className="overflow-x-hidden">
           <Routers />
         </div>

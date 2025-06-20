@@ -246,7 +246,7 @@ function DisplayLink({ menuIsOpen }) {
               )}
             >
               {link.name}
-              <span className="max-xl:hidden absolute bottom-0 w-0 h-px group-hover:w-full bg-black transition-all duration-300 ease-in-out"></span>
+              <span className="max-xl:hidden absolute bottom-0 left-0  w-0 h-px group-hover:w-full bg-white transition-all duration-300 ease-in-out"></span>
             </div>
             <div className="w-[1px] h-5 max-lg:h-8 bg-white"></div>
           </a>

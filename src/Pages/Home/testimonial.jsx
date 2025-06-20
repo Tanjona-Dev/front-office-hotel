@@ -65,7 +65,7 @@ function Testimonial() {
           layers={[{ image: testimonialImg, speed: -50 }]}
           className="absolute inset-0 w-full h-full"
         >
-          <div className=" border relative h-full w-full flex max-md:flex-col container mx-auto px-4 z-10">
+          <div className=" relative h-full w-full flex max-md:flex-col container mx-auto px-4 z-10">
             <div className="flex-1 flex flex-col gap-12 items-center justify-center p-4">
               <div className="text-center mb-6">
                 <Motion.h1
