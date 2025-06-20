@@ -1,7 +1,7 @@
-import room1 from "../../assets/Rooms/chambre1.jpeg";
+import { ArrowBigDownDash } from "lucide-react";
+import room1 from "../../../public/chambre1.jpeg";
 import LogoHotel from "../../assets/image/N_TLogo.png";
 import videoRomm from "../../assets/Rooms/roomVideoCloche.mp4";
-import { ArrowBigDownDash } from "lucide-react";
 
 export default function ChambreType() {
   return (

@@ -3,6 +3,7 @@ import Spa from "../../Pages/Spa";
 import Home from "../../Pages/Home";
 import HotelDetails from "../../Pages/HotelDetails";
 import ChambreType from "../../Pages/Chambres/Chambres";
+import NavBarHorizotal from "../Header/NavBarHorizotal";
 import Restaurant from "../../Pages/Restaurant/Restaurant";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
