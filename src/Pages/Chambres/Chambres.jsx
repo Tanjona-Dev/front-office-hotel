@@ -1,9 +1,106 @@
+import { useState } from "react";
 import { ArrowBigDownDash } from "lucide-react";
-import room1 from "../../../public/chambre1.jpeg";
 import LogoHotel from "../../assets/image/N_TLogo.png";
+import BalconImg from "../../assets/Rooms/LuxuryBalcon2.jpeg";
+import LuxuryRoom from "../../assets/Rooms/LuxuryRoom2.jpeg";
+import FamilyRoom from "../../assets/Rooms/FamillyRoom2.jpeg";
 import videoRomm from "../../assets/Rooms/roomVideoCloche.mp4";
+import { motion as Motion, AnimatePresence } from "framer-motion";
+import SupperiorRoomImg from "../../assets/Rooms/FamillyRoom1.jpeg";
+
+function DisplayReservationSection() {
+  return (
+    <div className="flex mx-75 relative h-auto mb-5">
+      <div className="flex flex-col items-center justify-center gap-6 w-150 bg-gradient-to-r from-white to-amber-50">
+        <h1 className="text-3xl  text-black/70">Réservez votre chambre</h1>
+        <p>
+          Nos chambres ont été imaginées pour satisfaire tous vos désirs.
+          Alliant comfort et tranquillité, vous y trouverez un lieu de repos et
+          de détente idéal loin du monde mouvementé extérieur.
+        </p>
+        <button className="bg-green-500 px-5 py-1 rounded-xl shadow-xl text-white cursor-pointer hover:scale-x-105 transition-all">
+          RESERVER
+        </button>
+      </div>
+      <div className="w-1/2 bg-amber-50 py-2 flex justify-center">
+        <img src={BalconImg} alt="" />
+      </div>
+    </div>
+  );
+}
+
+function DisplayTypeOfRoom({ setIndexHover, indexHover }) {
+  const typeOfRoom = [
+    {
+      id: 1,
+      type: "CHAMBRE SUPERIEUR",
+      photo: SupperiorRoomImg,
+    },
+    {
+      id: 2,
+      type: "CHAMBRE LUXURY",
+      photo: LuxuryRoom,
+    },
+    {
+      id: 3,
+      type: "CHAMBRE FAMILIALE",
+      photo: FamilyRoom,
+    },
+  ];
+  return (
+    <div className="mt-10">
+      <div className="flex flex-col justify-center items-center gap-4">
+        <h1 className="text-2xl text-black/70 flex justify-center">
+          NOS TYPES DE CHAMBRES
+        </h1>
+        <p className="flex justify-center text-lg">
+          Découvrez nos différents types de chambres, chacune conçue pour offrir
+          un confort optimal et une expérience unique.
+        </p>
+      </div>
+      {/* TYPE DE CHAMBRES */}
+      <div className="flex justify-center items-center max-lg:flex-col absolute left-0 right-0 mx-25 max-lg:mx-0 gap-4 mt-10">
+        {typeOfRoom.map((room, index) => {
+          return (
+            <div
+              key={`${room.id}`}
+              onMouseEnter={() => setIndexHover(index)}
+              className="w-1/3 max-lg:w-full bg-amber-50 p-4 flex flex-col gap-3 justify-center items-center relative shadow-xl"
+            >
+              <h1 className="text-xl">{room.type}</h1>
+              {indexHover === index && (
+                <AnimatePresence>
+                  <Motion.div
+                    initial={{ y: -50, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -50, opacity: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="absolute top-14 left-0 flex justify-center right-0 z-10"
+                  >
+                    <h1 className="bg-green-500 w-full text-white text-center py-2 cursor-pointer shadow-md">
+                      DÉCOUVRIR
+                    </h1>
+                  </Motion.div>
+                </AnimatePresence>
+              )}
+              <img
+                src={room.photo}
+                alt="room-superior"
+                className="w-130 h-100"
+              />
+            </div>
+          );
+        })}
+      </div>
+      <div className="mt-140">
+        <DisplayReservationSection />
+      </div>
+    </div>
+  );
+}
 
 export default function ChambreType() {
+  const [indexHover, setIndexHover] = useState(null);
   return (
     <div>
       <div className="relative h-screen w-full overflow-x-hidden shadow-xl shadow-amber-50">
@@ -27,7 +124,7 @@ export default function ChambreType() {
           />
         </div>
 
-        <h1 className="absolute shadow-5xl top-[20vh] left-0 right-0 text-4xl text-black/70 text-center bg-amber-50 py-5">
+        <h1 className="absolute shadow-5xl top-[22vh] left-0 right-0 text-4xl text-black/70 text-center bg-amber-50 py-5">
           NOS CHAMBRES
         </h1>
 
@@ -48,7 +145,7 @@ export default function ChambreType() {
 
             <div className=" max-lg:w-full w-180 flex justify-center items-center bg-amber-50 p-6">
               <img
-                src={room1}
+                src="chambre1.jpeg"
                 alt="Chambre d'hôtel"
                 className="w-210 max-w-xl h-120 object-cover rounded-lg"
               />
@@ -60,17 +157,11 @@ export default function ChambreType() {
           <ArrowBigDownDash />
         </div>
       </div>
-      <div className="mt-10">
-        <div className="flex flex-col justify-center items-center gap-4">
-          <h1 className="text-2xl text-black/70 flex justify-center">
-            NOS TYPES DE CHAMBRES
-          </h1>
-          <p className="flex justify-center text-lg">
-            Découvrez nos différents types de chambres, chacune conçue pour
-            offrir un confort optimal et une expérience unique.
-          </p>
-        </div>
-      </div>
+      {/* TYPE DE CHAMBRE */}
+      <DisplayTypeOfRoom
+        setIndexHover={setIndexHover}
+        indexHover={indexHover}
+      />
     </div>
   );
 }
