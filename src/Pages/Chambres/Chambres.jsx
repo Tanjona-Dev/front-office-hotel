@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
+import { useState, useContext } from "react";
 import Footer from "../../components/Footer";
 import { ArrowBigDownDash } from "lucide-react";
 import LogoHotel from "../../assets/image/N_TLogo.png";
@@ -6,6 +7,7 @@ import LuxuryRoom from "../../assets/Rooms/LuxuryRoom2.jpeg";
 import FamilyRoom from "../../assets/Rooms/FamillyRoom2.jpeg";
 import BalconImg from "../../assets/Rooms/LuxuryBalcon2.jpeg";
 import videoRomm from "../../assets/Rooms/roomVideoCloche.mp4";
+import { RoomTypeContext } from "../../components/utils/context";
 import { motion as Motion, AnimatePresence } from "framer-motion";
 import SupperiorRoomImg from "../../assets/Rooms/FamillyRoom1.jpeg";
 
@@ -30,22 +32,25 @@ function DisplayReservationSection() {
   );
 }
 
-function DisplayTypeOfRoom({ setIndexHover, indexHover }) {
+function DisplayTypeOfRoom({ setIndexHover, indexHover, setRoomType }) {
   const typeOfRoom = [
     {
       id: 1,
       type: "CHAMBRE SUPERIEUR",
       photo: SupperiorRoomImg,
+      stateType: "SUPERIEUR",
     },
     {
       id: 2,
       type: "CHAMBRE LUXURY",
       photo: LuxuryRoom,
+      stateType: "LUXE",
     },
     {
       id: 3,
       type: "CHAMBRE FAMILIALE",
       photo: FamilyRoom,
+      stateType: "FAMILIALE",
     },
   ];
   return (
@@ -60,13 +65,16 @@ function DisplayTypeOfRoom({ setIndexHover, indexHover }) {
         </p>
       </div>
       {/* TYPE DE CHAMBRES */}
+
       <div className="flex justify-center items-center max-lg:flex-col absolute left-0 right-0 mx-25 max-lg:mx-0 gap-4 mt-10">
         {typeOfRoom.map((room, index) => {
           return (
-            <div
+            <Link
+              to={`/room-type`}
               key={`${room.id}`}
               onMouseEnter={() => setIndexHover(index)}
-              className="w-1/3 max-lg:w-full bg-amber-50 p-4 flex flex-col gap-3 justify-center items-center relative shadow-xl"
+              className="w-1/3 max-lg:w-full bg-amber-50 p-4 flex flex-col gap-3 justify-center items-center relative shadow-xl cursor-pointer hover:shadow-2xl hover:brightness-105"
+              onClick={() => setRoomType(room.stateType)}
             >
               <h1 className="text-xl">{room.type}</h1>
               {indexHover === index && (
@@ -76,7 +84,7 @@ function DisplayTypeOfRoom({ setIndexHover, indexHover }) {
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: -50, opacity: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="absolute top-14 left-0 flex justify-center right-0 z-10"
+                    className="absolute top-14 left-0 flex justify-center right-0 z-10 "
                   >
                     <h1 className="bg-green-500 w-full text-white text-center py-2 cursor-pointer shadow-md">
                       DÉCOUVRIR
@@ -89,10 +97,11 @@ function DisplayTypeOfRoom({ setIndexHover, indexHover }) {
                 alt="room-superior"
                 className="w-130 h-100"
               />
-            </div>
+            </Link>
           );
         })}
       </div>
+
       <div className="mt-140">
         <DisplayReservationSection />
       </div>
@@ -102,6 +111,8 @@ function DisplayTypeOfRoom({ setIndexHover, indexHover }) {
 
 export default function ChambreType() {
   const [indexHover, setIndexHover] = useState(null);
+  const { setRoomType } = useContext(RoomTypeContext);
+
   const footerLink = [
     {
       name: "L'HOTEL",
@@ -188,6 +199,7 @@ export default function ChambreType() {
       <DisplayTypeOfRoom
         setIndexHover={setIndexHover}
         indexHover={indexHover}
+        setRoomType={setRoomType}
       />
       <div className="mt-20">
         <Footer liens={footerLink} />

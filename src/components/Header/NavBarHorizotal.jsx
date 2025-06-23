@@ -7,25 +7,30 @@ import {
   Calendar,
   Facebook,
 } from "lucide-react";
-import { useState } from "react";
 import { cn } from "../../lib/utils";
+import { Link } from "react-router-dom";
+import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { RoomTypeContext } from "../utils/context";
 import LogoHotel from "../../assets/image/N_TLogo.png";
 import barPlage from "../../assets/NavBar-img/barPlage.jpeg";
 import massageImg from "../../assets/NavBar-img/massage.jpeg";
 import restoImg from "../../assets/NavBar-img/restoPlage.jpeg";
 import loungeImg from "../../assets/NavBar-img/loungeBar.jpeg";
 import { motion as Motion, AnimatePresence } from "framer-motion";
-import { useNavigate } from "react-router-dom";
 
 const roomType = [
   {
     name: "Chambre supérieure",
+    stateType: "SUPERIEUR",
   },
   {
     name: "Chambre Luxiry",
+    stateType: "LUXE",
   },
   {
-    name: "Chambre supérieure",
+    name: "Chambre familiale",
+    stateType: "FAMILIALE",
   },
 ];
 // menu content
@@ -35,6 +40,8 @@ function DisplayMenuContent({
   setIsHover,
   setIsHover2,
   locationLink,
+  setRoomType,
+  setMenuIsOpen,
 }) {
   const navigate = useNavigate();
   const LinkArrow = [
@@ -137,18 +144,21 @@ function DisplayMenuContent({
         </div>
         <div className="mt-5 flex flex-col gap-5 w-100 max-lg:hidden">
           <h1 className="text-lg">CHAMBRE</h1>
-          <ul>
+          <Link to={`/room-type`} onClick={() => setMenuIsOpen(false)}>
             {roomType.map((room, index) => (
               <li
                 key={index}
                 className="text-lg flex items-center gap-2 border-t border-b py-3 cursor-pointer w-full"
               >
-                <span className="text-black/50 hover:text-black">
+                <span
+                  onClick={() => setRoomType(room.stateType)}
+                  className="text-black/50 hover:text-black"
+                >
                   {room.name}
                 </span>
               </li>
             ))}
-          </ul>
+          </Link>
           <div className="flex gap-5">
             <Facebook
               fill="black"
@@ -261,6 +271,7 @@ function NavBarHorizotal() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [isHover, setIsHover] = useState(false);
   const [isHover2, setIsHover2] = useState(false);
+  const { setRoomType } = useContext(RoomTypeContext);
   const locationLink = [
     {
       name: "N&T Hotel, Ambohimahasoa | Antananarivo - Madagascar",
@@ -286,6 +297,8 @@ function NavBarHorizotal() {
               isHover={isHover}
               isHover2={isHover2}
               setIsHover2={setIsHover2}
+              setRoomType={setRoomType}
+              setMenuIsOpen={setMenuIsOpen}
             />
           </Motion.div>
         )}
