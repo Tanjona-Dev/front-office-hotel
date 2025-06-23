@@ -21,9 +21,9 @@ function DisplayReservationSection() {
           Alliant comfort et tranquillité, vous y trouverez un lieu de repos et
           de détente idéal loin du monde mouvementé extérieur.
         </p>
-        <button className="bg-green-500 px-5 py-1 rounded-xl shadow-xl text-white cursor-pointer hover:scale-x-105 transition-all">
+        <Link to={`/reservation`} className="bg-green-500 px-5 py-1 rounded-xl shadow-xl text-white cursor-pointer hover:scale-x-105 transition-all">
           RESERVER
-        </button>
+        </Link>
       </div>
       <div className="w-1/2 bg-amber-50 py-2 flex justify-center">
         <img src={BalconImg} alt="" />
@@ -54,7 +54,7 @@ function DisplayTypeOfRoom({ setIndexHover, indexHover, setRoomType }) {
     },
   ];
   return (
-    <div className="mt-10">
+    <div id="type" className="mt-10">
       <div className="flex flex-col justify-center items-center gap-4">
         <h1 className="text-2xl text-black/70 flex justify-center">
           NOS TYPES DE CHAMBRES
@@ -176,9 +176,11 @@ export default function ChambreType() {
                 nécessaire pour un séjour agréable, y compris la climatisation,
                 le Wi-Fi gratuit et une télévision à écran plat.
               </p>
-              <button className="text-black border bg-amber-100 rounded-full py-2 hover:scale-y-105 cursor-pointer hover:bg-amber-200 hover:shadow  transition-all">
-                DECOUVRIR NOS TYPES DE CHAMBRES
-              </button>
+              <a href="#type">
+                <button className="text-black border bg-amber-100 rounded-full py-2 hover:scale-y-105 cursor-pointer hover:bg-amber-200 hover:shadow  transition-all">
+                  DECOUVRIR NOS TYPES DE CHAMBRES
+                </button>
+              </a>
             </div>
 
             <div className=" max-lg:w-full w-180 flex justify-center items-center bg-amber-50 p-6">

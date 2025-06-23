@@ -47,12 +47,12 @@ function DisplayMenuContent({
   const LinkArrow = [
     {
       name: "RESERVATION",
-      url: "https://wa.me/+261344328140",
+      url: "/reservation",
       icon: <Calendar color="black" size={16} className="mt-1" />,
     },
     {
       name: "+261344328140",
-      url: "+261 34 43 281 40",
+      url: "https://wa.me/+261344328140",
       icon: <Phone size={16} color="black" className="mt-1" />,
     },
   ];
@@ -83,9 +83,12 @@ function DisplayMenuContent({
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white flex gap-3"
+                  onClick={() => setMenuIsOpen(false)}
                 >
                   <div>{link.icon}</div>
-                  <div className="text-black">{link.name}</div>
+                  <Link to={link.url} className="text-black">
+                    {link.name}
+                  </Link>
                   <div className="w-[1px] h-5 bg-black"></div>
                 </a>
               </li>
@@ -95,7 +98,9 @@ function DisplayMenuContent({
       </div>
       <div className="flex gap-12 max-lg:flex-col">
         <div className="w-110 px-5 flex flex-col gap-7">
-          <img src={LogoHotel} alt="Logo-hotel" className="w-30 mx-auto" />
+          <Link to={`/`}>
+            <img src={LogoHotel} alt="Logo-hotel" className="w-30 mx-auto" />
+          </Link>
           <p className="max-lg:hidden">
             Le N&T Hotel est un hôtel d’affaires haut de gamme. Un large choix
             de restauration internationale, fusion et régionale vous attends
@@ -159,6 +164,12 @@ function DisplayMenuContent({
               </li>
             ))}
           </Link>
+          <Link
+            to={`/ChambreType`}
+            className="text-black/50 hover:text-black text-lg flex items-center gap-2  border-b pb-3 cursor-pointer w-full"
+          >
+            Toutes
+          </Link>
           <div className="flex gap-5">
             <Facebook
               fill="black"
@@ -176,9 +187,12 @@ function DisplayMenuContent({
           onMouseLeave={() => setIsHover(false)}
           className="xl:h-5"
         >
-          <h1 className=" text-lg max-lg:border-b max-lg:text-right max-lg:mx-5 cursor-pointer">
+          <Link
+            to={`/reservation`}
+            className=" text-lg max-lg:border-b max-lg:text-right max-lg:mx-5 cursor-pointer"
+          >
             RESERVATION
-          </h1>
+          </Link>
           <Motion.div
             initial={{ scaleX: 0 }}
             animate={{ scaleX: isHover ? 1 : 0 }}
@@ -215,11 +229,11 @@ function DisplayMenuLogo() {
   );
 }
 
-function DisplayLink({ menuIsOpen }) {
+function DisplayLink({ menuIsOpen, setMenuIsOpen }) {
   const LinkArrow = [
     {
       name: "RESERVATION",
-      url: "https://wa.me/+261344328140",
+      url: "/reservation",
       icon: (
         <Calendar
           size={16}
@@ -229,7 +243,7 @@ function DisplayLink({ menuIsOpen }) {
     },
     {
       name: "+261344328140",
-      url: "+261 34 43 281 40",
+      url: "https://wa.me/+261344328140",
       icon: (
         <Phone
           size={16}
@@ -241,9 +255,13 @@ function DisplayLink({ menuIsOpen }) {
   return (
     <ul className="w-full flex gap-5 justify-between">
       {LinkArrow.map((link, index) => (
-        <li key={index} className={cn("flex items-center ")}>
-          <a
-            href={link.url}
+        <li
+          onClick={() => setMenuIsOpen(false)}
+          key={index}
+          className={cn("flex items-center ")}
+        >
+          <Link
+            to={link.url}
             target="_blank"
             rel="noopener noreferrer"
             className="text-white flex gap-5"
@@ -259,7 +277,7 @@ function DisplayLink({ menuIsOpen }) {
               <span className="max-xl:hidden absolute bottom-0 left-0  w-0 h-px group-hover:w-full bg-white transition-all duration-300 ease-in-out"></span>
             </div>
             <div className="w-[1px] h-5 max-lg:h-8 bg-white"></div>
-          </a>
+          </Link>
         </li>
       ))}
     </ul>
@@ -284,6 +302,7 @@ function NavBarHorizotal() {
       <AnimatePresence>
         {menuIsOpen && (
           <Motion.div
+            onClick={() => setMenuIsOpen(false)}
             initial={{ opacity: 1, y: -550 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 1, y: -550 }}
@@ -305,7 +324,7 @@ function NavBarHorizotal() {
       </AnimatePresence>
       {/* NAVBAR HORIZONTALE ACEUIL */}
       <nav className="flex justify-between items-center">
-        <div className="w-full max-lg:hidden">
+        <div className=" max-lg:hidden">
           {/* display LOCATION */}
           {locationLink.map((link, index) => (
             <a
@@ -322,7 +341,10 @@ function NavBarHorizotal() {
         </div>
         <div className="text-end px-5 flex gap-5 items-center max-lg:flex-row-reverse max-lg:justify-between max-lg:px-0 max-lg:mx-0 max-lg:w-full max-lg:h-4 ">
           <div>
-            <DisplayLink menuIsOpen={menuIsOpen} />
+            <DisplayLink
+              menuIsOpen={menuIsOpen}
+              setMenuIsOpen={setMenuIsOpen}
+            />
           </div>
           {menuIsOpen ? (
             <Motion.div

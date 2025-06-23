@@ -1,6 +1,13 @@
 import LogoHotel from "../../assets/image/N_TLogo.png";
 import { ArrowUp, Facebook, Twitter } from "lucide-react";
 
+function scrollToTopButton() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}
+
 function Footer({ liens }) {
   const mailAdress = ["rabemangasoatanjonanasa@gmail.com"];
   const phoneNumbre = ["+261 34 43 281 40"];
@@ -49,7 +56,10 @@ function Footer({ liens }) {
         <div className="p-5 bg-white h-15 rounded-full cursor-pointer hover:bg-black/50 hover:text-white">
           <Twitter size={20} />
         </div>
-        <div className="mt-4 flex flex-col items-center rounded-full cursor-pointer group">
+        <div
+          onClick={() => scrollToTopButton()}
+          className="mt-4 flex flex-col items-center rounded-full cursor-pointer group"
+        >
           <ArrowUp className="border rounded-full animate-bounce bg-white" />
           <h1 className="group-hover:underline">Scroll Top</h1>
         </div>

@@ -1,6 +1,7 @@
 import Bar from "../../Pages/Bar";
 import Spa from "../../Pages/Spa";
 import Home from "../../Pages/Home";
+import Reservation from "../../Pages/Reservation";
 import HotelDetails from "../../Pages/HotelDetails";
 import { RoomTypeProvider } from "../utils/context";
 import ChambreType from "../../Pages/Chambres/Chambres";
@@ -24,6 +25,7 @@ export default function Routers() {
           <Route path="/ChambreType" element={<ChambreType />} />
           <Route path="/HotelDetails" element={<HotelDetails />} />
           <Route path="/room-type" element={<TypeOfRoom />} />
+          <Route path="/reservation" element={<Reservation />} />
         </Routes>
       </RoomTypeProvider>
     </Router>

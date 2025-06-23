@@ -4,8 +4,9 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import { useContext } from "react";
-import { ArrowRight, Check } from "lucide-react";
+import { Link } from "react-router-dom";
 import Autoplay from "embla-carousel-autoplay";
+import { ArrowRight, Check } from "lucide-react";
 import LogoHotel from "../../assets/image/N_TLogo.png";
 import LuxuryRoom from "../../assets/Rooms/LuxuryRoom2.jpeg";
 import FamilyRoom from "../../assets/Rooms/FamillyRoom2.jpeg";
@@ -108,7 +109,9 @@ function TypeOfRoom() {
   return (
     <div>
       <div className="flex justify-center bg-amber-900 shadow-2xl">
-        <img src={LogoHotel} alt="Logo-hotel" className="w-30 h-30" />
+        <Link to={`/`} className="z-55">
+          <img src={LogoHotel} alt="Logo-hotel" className="w-30 h-30" />
+        </Link>
       </div>
       <h1 className="flex justify-center text-4xl mt-8">
         DETAIL DE LA CHAMBRE
@@ -177,9 +180,11 @@ function TypeOfRoom() {
             </div>
           </div>
         </div>
-        <button className="bg-green-500 text-white rounded-full h-10 p-1 my-1 px-3">
-          Voir details
-        </button>
+        <a href="#details">
+          <button className="bg-green-500 text-white rounded-full h-10 p-1 my-1 px-3 cursor-pointer shadow hover:shadow-lg">
+            Voir details
+          </button>
+        </a>
       </div>
       <div className=" text-black/80 my-5">
         <div className=" py-5">
@@ -190,7 +195,10 @@ function TypeOfRoom() {
                   <div className="bg-amber-900 text-white text-center">
                     <p className="text-lg my-5">{room.description}</p>
                   </div>
-                  <div className="bg-amber-50 flex justify-around py-10">
+                  <div
+                    id="details"
+                    className="bg-amber-50 flex justify-around py-10"
+                  >
                     <div>
                       <h1 className="text-xl">Équipements Premium</h1>
                       <ul className=" my-5 space-y-3">
