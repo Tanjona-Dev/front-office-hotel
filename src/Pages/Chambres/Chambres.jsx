@@ -1,9 +1,10 @@
 import { useState } from "react";
+import Footer from "../../components/Footer";
 import { ArrowBigDownDash } from "lucide-react";
 import LogoHotel from "../../assets/image/N_TLogo.png";
-import BalconImg from "../../assets/Rooms/LuxuryBalcon2.jpeg";
 import LuxuryRoom from "../../assets/Rooms/LuxuryRoom2.jpeg";
 import FamilyRoom from "../../assets/Rooms/FamillyRoom2.jpeg";
+import BalconImg from "../../assets/Rooms/LuxuryBalcon2.jpeg";
 import videoRomm from "../../assets/Rooms/roomVideoCloche.mp4";
 import { motion as Motion, AnimatePresence } from "framer-motion";
 import SupperiorRoomImg from "../../assets/Rooms/FamillyRoom1.jpeg";
@@ -101,6 +102,32 @@ function DisplayTypeOfRoom({ setIndexHover, indexHover }) {
 
 export default function ChambreType() {
   const [indexHover, setIndexHover] = useState(null);
+  const footerLink = [
+    {
+      name: "L'HOTEL",
+    },
+    {
+      name: "CHAMBRE",
+    },
+    {
+      name: "RESTAURANT",
+    },
+    {
+      name: "LA CANOPEE",
+    },
+    {
+      name: "OXYGEN",
+    },
+    {
+      name: "LE MAEVANA",
+    },
+    {
+      name: "RESERVATION",
+    },
+    {
+      name: "CONTACT",
+    },
+  ];
   return (
     <div>
       <div className="relative h-screen w-full overflow-x-hidden shadow-xl shadow-amber-50">
@@ -162,6 +189,9 @@ export default function ChambreType() {
         setIndexHover={setIndexHover}
         indexHover={indexHover}
       />
+      <div className="mt-20">
+        <Footer liens={footerLink} />
+      </div>
     </div>
   );
 }
