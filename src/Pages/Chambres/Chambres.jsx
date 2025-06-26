@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useState, useContext } from "react";
 import Footer from "../../components/Footer";
 import { ArrowBigDownDash } from "lucide-react";
-import LogoHotel from "../../assets/image/N_TLogo.png";
+import LogoHotel from "../../assets/Logo/N_TLogo.png";
 import LuxuryRoom from "../../assets/Rooms/LuxuryRoom2.jpeg";
 import FamilyRoom from "../../assets/Rooms/FamillyRoom2.jpeg";
 import BalconImg from "../../assets/Rooms/LuxuryBalcon2.jpeg";

@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { RoomTypeContext } from "../utils/context";
-import LogoHotel from "../../assets/image/N_TLogo.png";
+import LogoHotel from "../../assets/Logo/N_TLogo.png";
 import barPlage from "../../assets/NavBar-img/barPlage.jpeg";
 import massageImg from "../../assets/NavBar-img/massage.jpeg";
 import restoImg from "../../assets/NavBar-img/restoPlage.jpeg";
@@ -58,7 +58,7 @@ function DisplayMenuContent({
   ];
   return (
     <div className="flex flex-col gap-5">
-      <div className="flex  justify-center h-full p-5 mt-3">
+      <div className="flex justify-center h-full p-5 mt-3">
         <div className="w-full flex flex-col gap-2 max-lg:hidden">
           {/* Location at menu Content */}
           {locationLink.map((link, index) => (

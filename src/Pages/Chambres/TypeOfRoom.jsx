@@ -7,7 +7,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import Autoplay from "embla-carousel-autoplay";
 import { ArrowRight, Check } from "lucide-react";
-import LogoHotel from "../../assets/image/N_TLogo.png";
+import LogoHotel from "../../assets/Logo/N_TLogo.png";
 import LuxuryRoom from "../../assets/Rooms/LuxuryRoom2.jpeg";
 import FamilyRoom from "../../assets/Rooms/FamillyRoom2.jpeg";
 import balconImg from "../../assets/Rooms/BalconFamilly1.jpeg";
