@@ -1,4 +1,4 @@
-import LogoHotel from "../../assets/image/N_TLogo.png";
+import LogoHotel from "../../assets/Logo/N_TLogo.png";
 
 function Reservation() {
   return (
