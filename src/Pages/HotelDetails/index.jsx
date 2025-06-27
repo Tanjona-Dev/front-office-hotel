@@ -9,6 +9,7 @@ import WIFI from "../../assets/Logo/wifim.png";
 import Autoplay from "embla-carousel-autoplay";
 import snack from "../../assets/image/snack.jpg";
 // import { motion as Motion } from "framer-motion";
+import LogoHotel from "../../assets/Logo/N_TLogo.png";
 import parkingP from "../../assets/Logo/parkingbg.png";
 import breakfast from "../../assets/image/breakFast.jpg";
 import parking from "../../assets/image/beachParking.jpg";
@@ -34,13 +35,23 @@ export default function HotelDetails() {
   return (
     <>
       <div className="bg-[#D2A76F] min-h-[250px] w-full relative">
-        <div className="w-full pt-40">
+        <Link
+          to={""}
+          className="absolute top-0 left-1/2 max-xl:pt-10 max-lg:pt-15 transform -translate-x-1/2 z-50"
+        >
+          <img
+            src={LogoHotel}
+            alt="Logo de l'hôtel"
+            className="w-45 h-45 max-xl:w-30 max-xl:h-30"
+          />
+        </Link>
+        <div className="w-full pt-45">
           <h1 className="uppercase text-4xl max-xl:text-3xl text-black/70 text-center bg-amber-50 py-5">
             À propos de l’hôtel
           </h1>
           <div className="flex flex-col lg:flex-row mx-40 max-xl:mx-15 max-lg:mx-5 my-20">
             <div className="bg-amber-50 w-auto h-auto p-15 max-xl:p-10 max-sm:p-5">
-              <h1 className="pb-6 uppercase text-3xl text-black/70 md:text-4xl max-sm:text-3xl font-semibold mb-6 max-xl:mb-2">
+              <h1 className="pb-6 uppercase text-3xl text-black/70 md:text-4xl max-sm:text-2xl text-center font-semibold mb-6 max-xl:mb-2">
                 N & T Hotel & Spa
               </h1>
               <p className="text-lg leading-relaxed">
@@ -124,14 +135,16 @@ export default function HotelDetails() {
                 className="flex flex-row items-center justify-center bg-white p-4 border-2 border-black/80
             "
               >
-                <img
-                  src={service.logo}
-                  alt={service.text}
-                  className="w-15 h-15 object-contain"
-                />
-                <span className="text-xl font-medium text-black/80">
-                  {service.text}
-                </span>
+                <div className="flex items-center gap-2">
+                  <img
+                    src={service.logo}
+                    alt={service.text}
+                    className="w-15 h-15 object-contain"
+                  />
+                  <span className="text-xl font-medium text-black/80">
+                    {service.text}
+                  </span>
+                </div>
               </div>
             ))}
           </div>
