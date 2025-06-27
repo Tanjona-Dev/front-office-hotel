@@ -108,15 +108,15 @@ function TypeOfRoom() {
   ];
   return (
     <div>
-      <div className="flex justify-center bg-amber-900 shadow-2xl">
+      <div className="flex justify-center bg-amber-900 shadow-2xl max-lg:pt-15">
         <Link to={`/`} className="z-55">
           <img src={LogoHotel} alt="Logo-hotel" className="w-30 h-30" />
         </Link>
       </div>
-      <h1 className="flex justify-center text-4xl mt-8">
+      <h1 className="flex justify-center text-4xl mt-8 max-lg:text-2xl">
         DETAIL DE LA CHAMBRE
       </h1>
-      <div className="w-full flex justify-center gap-5 mt-8">
+      <div className="w-full flex justify-center gap-5 mt-8 max-lg:flex-col">
         <div className="flex justify-center w-150 h-150 overflow-hidden shadow-lg">
           <Carousel
             plugins={[
@@ -130,8 +130,8 @@ function TypeOfRoom() {
                 photo.stateType === roomType && (
                   <CarouselContent key={`${index}`}>
                     {Array.isArray(photo.photo) ? (
-                      photo.photo.map((phot) => (
-                        <CarouselItem>
+                      photo.photo.map((phot, index) => (
+                        <CarouselItem key={`${index}`}>
                           <img src={phot} className={`w-150 h-150 shadow-lg`} />
                         </CarouselItem>
                       ))
@@ -180,7 +180,7 @@ function TypeOfRoom() {
             </div>
           </div>
         </div>
-        <a href="#details">
+        <a href="#details" className="max-lg:mx-auto">
           <button className="bg-green-500 text-white rounded-full h-10 p-1 my-1 px-3 cursor-pointer shadow hover:shadow-lg">
             Voir details
           </button>
@@ -197,10 +197,12 @@ function TypeOfRoom() {
                   </div>
                   <div
                     id="details"
-                    className="bg-amber-50 flex justify-around py-10"
+                    className="bg-amber-50 flex justify-around py-10 max-lg:flex-col max-lg:items-center"
                   >
                     <div>
-                      <h1 className="text-xl">Équipements Premium</h1>
+                      <h1 className="text-xl max-lg:text-center">
+                        Équipements Premium
+                      </h1>
                       <ul className=" my-5 space-y-3">
                         {room.equipement.map((equipement, index) => (
                           <li key={index} className="flex gap-1">
@@ -210,18 +212,21 @@ function TypeOfRoom() {
                       </ul>
                     </div>
                     <div>
-                      <h1 className="text-xl">Capacité & Confort</h1>
-                      <ul className=" my-5 space-y-3">
+                      <h1 className="text-xl max-lg:text-center">
+                        Capacité & Confort
+                      </h1>
+                      <ul className=" my-5 space-y-3  max-lg:mx-auto">
                         {room.confort.map((confort, index) => (
                           <li key={index} className="flex gap-1">
-                            {" "}
                             <Check size={12} color="green" /> {confort}
                           </li>
                         ))}
                       </ul>
                     </div>
                     <div>
-                      <h1 className="text-xl">Salle de bain & Services</h1>
+                      <h1 className="text-xl max-lg:text-center">
+                        Salle de bain & Services
+                      </h1>
                       <ul className=" my-5 space-y-3">
                         {room.service.map((confort, index) => (
                           <li key={index} className="flex gap-1">

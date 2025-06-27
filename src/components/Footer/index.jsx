@@ -12,8 +12,8 @@ function Footer({ liens }) {
   const mailAdress = ["rabemangasoatanjonanasa@gmail.com"];
   const phoneNumbre = ["+261 34 43 281 40"];
   return (
-    <div className="flex justify-around bg-amber-50 shadow-lg">
-      <ul className="flex flex-col gap-4 mt-7">
+    <div className="flex justify-around bg-amber-50 shadow-lg max-lg:flex-col max-lg:gap-5">
+      <ul className="flex flex-col gap-4 mt-7 max-lg:flex-row max-lg:flex-wrap max-lg:mx-3 max-lg:justify-center">
         {liens.map((lien, index) => {
           return (
             <div key={index}>
@@ -26,10 +26,10 @@ function Footer({ liens }) {
         })}
       </ul>
       <div className="flex flex-col items-center gap-4 xl:pl-50">
-        <div>
+        <div className="max-sm:hidden">
           <img src={LogoHotel} alt="logo hotel" className="w-40 h-40" />
         </div>
-        <h1 className="hover:underline cursor-pointer">
+        <h1 className="hover:underline cursor-pointer max-sm:text-center">
           {" "}
           IMMEUBLE N&T Hotel Ambohimanarina Antananarivo - Madagascar
         </h1>
@@ -49,7 +49,7 @@ function Footer({ liens }) {
           ))}
         </h2>
       </div>
-      <div className="mt-7 flex gap-4">
+      <div className="mt-7 flex gap-4 max-sm:flex max-lg:justify-center">
         <div className="p-5 bg-white h-15 rounded-full cursor-pointer hover:bg-black/50 hover:text-white">
           <Facebook size={20} />
         </div>

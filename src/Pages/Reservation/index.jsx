@@ -1,6 +1,11 @@
+import LogoHotel from "../../assets/image/N_TLogo.png";
+
 function Reservation() {
   return (
-    <div>
+    <div className="bg-amber-50">
+      <div className="flex justify-center">
+        <img src={LogoHotel} alt="" className="w-35" />
+      </div>
       <h1>RESERVATION</h1>
       <form action="">
         <input type="text" />

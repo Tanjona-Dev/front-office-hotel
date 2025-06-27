@@ -78,19 +78,19 @@ function DisplayMenuContent({
           <ul className="w-full flex gap-5 justify-between pr-20">
             {LinkArrow.map((link, index) => (
               <li key={index} className={cn("flex items-center ")}>
-                <a
-                  href={link.url}
+                <Link
+                  to={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white flex gap-3"
                   onClick={() => setMenuIsOpen(false)}
                 >
                   <div>{link.icon}</div>
-                  <Link to={link.url} className="text-black">
+                  <span to={link.url} className="text-black">
                     {link.name}
-                  </Link>
+                  </span>
                   <div className="w-[1px] h-5 bg-black"></div>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
