@@ -69,7 +69,7 @@ function Home() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.5 }}
-              className="mt-2 text-2xl md:text-xl max-md:text-xl text-center text-white font-medium italic"
+              className="mt-2 text-2xl md:text-xl max-md:text-xl text-center text-white font-medium "
             >
               Votre séjour d'exception
             </Motion.p>
@@ -83,7 +83,7 @@ function Home() {
               stiffness: 50,
               delay: 2,
             }}
-            className="absolute bottom-55 max-sm:bottom-10 max-sm:-bottom-15 max-lg:-bottom-10 max-xl:bottom-55 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center animate-bounce"
+            className="absolute bottom-55  max-sm:-bottom-15 max-lg:-bottom-10 max-xl:bottom-55 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center animate-bounce"
           >
             <p className="text-white text-sm font-bold uppercase">Découvrir</p>
             <div className="inline-flex border-5 border-white p-2 max-lg:p-1 rounded-full mt-5 max-lg:mt-2 animate-bounce">

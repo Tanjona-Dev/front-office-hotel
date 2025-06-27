@@ -14,7 +14,7 @@ export default function Routers() {
   return (
     <Router className="relative">
       <RoomTypeProvider>
-        <div className="z-50 absolute top-0  w-full">
+        <div className="z-50 absolute top-0 w-full">
           <NavBarHorizotal />
         </div>
         <Routes>
