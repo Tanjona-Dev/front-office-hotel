@@ -5,22 +5,32 @@ import {
 } from "@/components/ui/carousel";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import WIFI from "../../assets/Logo/WIFI.png";
+import WIFI from "../../assets/Logo/wifim.png";
 import Autoplay from "embla-carousel-autoplay";
 import snack from "../../assets/image/snack.jpg";
 // import { motion as Motion } from "framer-motion";
+import parkingP from "../../assets/Logo/parkingbg.png";
 import breakfast from "../../assets/image/breakFast.jpg";
 import parking from "../../assets/image/beachParking.jpg";
 import testimonialImg from "../../assets/image/sunset.jpg";
+import petitdejeuner from "../../assets/Logo/breakFast.png";
+import restoBar from "../../assets/Logo/bar-restaurant.png";
 import NTLogomini from "../../assets/Logo/N_TLogo_mini.png";
+import climatiseur from "../../assets/Logo/climatiseurbg.png";
 import airCondition from "../../assets/image/airCondition.jpg";
 import apercu1 from "../../assets/Temoignage-img/apercu1.jpeg";
 import apercu2 from "../../assets/Temoignage-img/apercu2.jpeg";
 import apercu3 from "../../assets/Temoignage-img/apercu3.jpeg";
 import { ParallaxProvider, ParallaxBanner } from "react-scroll-parallax";
-import Footer from "../../components/Footer";
+// import Footer from "../../components/Footer";
 
 export default function HotelDetails() {
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Email envoyer :", email);
+  };
   return (
     <>
       <div className="bg-[#D2A76F] min-h-[250px] w-full relative">
@@ -104,14 +114,15 @@ export default function HotelDetails() {
           <div className="flex grid grid-cols-5 max-xl:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1  gap-4 p-10 ">
             {[
               { logo: WIFI, text: "Connexion Wi-Fi gratuite" },
-              { logo: WIFI, text: "Service de petit-déjeuner" },
-              { logo: WIFI, text: "Parking réservé aux clients" },
-              { logo: WIFI, text: "Bar-restaurant sur place" },
-              { logo: WIFI, text: "Chambres climatisées" },
+              { logo: petitdejeuner, text: "Service de petit-déjeuner" },
+              { logo: parkingP, text: "Parking réservé aux clients" },
+              { logo: restoBar, text: "Bar-restaurant sur place" },
+              { logo: climatiseur, text: "Chambres climatisées" },
             ].map((service, index) => (
               <div
                 key={index}
-                className="flex flex-row items-center justify-center p-4 border-2 border-black"
+                className="flex flex-row items-center justify-center bg-white p-4 border-2 border-black/80
+            "
               >
                 <img
                   src={service.logo}
@@ -147,12 +158,14 @@ export default function HotelDetails() {
             actualités.
           </p>
 
-          <form className="relative mt-2">
+          <form onSubmit={handleSubmit} className="relative mt-2">
             <div className="flex">
               <input
                 type="email"
-                className="bg-amber-50 py-3 px-5  max-sm:text-sm rounded-l-full focus:ring-2 focus:ring-amber-300 w-full"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Votre e-mail"
+                className="bg-amber-50 py-3 px-5  max-sm:text-sm rounded-l-full focus:ring-2 focus:ring-amber-300 w-full"
                 required
               />
               <button
