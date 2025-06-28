@@ -114,38 +114,25 @@ function DisplayMenuContent({
           </button>
         </div>
         <div className="grid grid-cols-2 gap-5 mt-5 max-lg:flex max-lg:flex-col max-lg:mx-5">
-          <div className="flex flex-col gap-2 overflow-hidden  max-lg:border-b">
-            <h1 className="text-lg">LA CANOPEE</h1>
-            <img
-              src={barPlage}
-              alt=""
-              className="w-62 h-35 hover:scale-105 transition-all duration-400 cursor-pointer max-lg:hidden"
-            />
-          </div>
-          <div className="flex flex-col gap-2 overflow-hidden  max-lg:border-b">
-            <h1 className="text-lg">OXYGEN LOUNGE BAR</h1>
-            <img
-              src={loungeImg}
-              alt=""
-              className="w-62 h-35 hover:scale-105 transition-all duration-400 cursor-pointer max-lg:hidden"
-            />
-          </div>
-          <div className="flex flex-col gap-2 overflow-hidden  max-lg:border-b">
-            <h1 className="text-lg">MAEVANAKA</h1>
-            <img
-              src={massageImg}
-              alt=""
-              className="w-62 h-35 hover:scale-105 transition-all duration-400 cursor-pointer max-lg:hidden"
-            />
-          </div>
-          <div className="flex flex-col gap-2 overflow-hidden  max-lg:border-b">
-            <h1 className="text-lg">RESTAURANT MAEVA</h1>
-            <img
-              src={restoImg}
-              alt=""
-              className="w-62 h-35 hover:scale-105 transition-all duration-400 cursor-pointer max-lg:hidden"
-            />
-          </div>
+          {[
+            { title: "Chambre", image: loungeImg, path: "/ChambreType" },
+            { title: "Bar", image: barPlage, path: "/Bar" },
+            { title: "Restaurant", image: restoImg, path: "/Restaurant" },
+            { title: "Spa", image: massageImg, path: "/Spa" },
+          ].map((item, index) => (
+            <div
+              key={index}
+              onClick={() => navigate(item.path)}
+              className="flex flex-col gap-2 overflow-hidden  max-lg:border-b"
+            >
+              <h1 className="text-lg uppercase">{item.title}</h1>
+              <img
+                src={item.image}
+                alt=""
+                className="w-62 h-35 hover:scale-105 transition-all duration-400 cursor-pointer max-lg:hidden"
+              />
+            </div>
+          ))}
         </div>
         <div className="mt-5 flex flex-col gap-5 w-100 max-lg:hidden">
           <h1 className="text-lg">CHAMBRE</h1>

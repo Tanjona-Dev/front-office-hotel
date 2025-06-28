@@ -9,13 +9,12 @@ import WIFI from "../../assets/Logo/wifim.png";
 import Autoplay from "embla-carousel-autoplay";
 import snack from "../../assets/image/snack.jpg";
 // import { motion as Motion } from "framer-motion";
-import LogoHotel from "../../assets/Logo/N_TLogo.png";
+import restoBar from "../../assets/Logo/restoBar.png";
 import parkingP from "../../assets/Logo/parkingbg.png";
 import breakfast from "../../assets/image/breakFast.jpg";
 import parking from "../../assets/image/beachParking.jpg";
 import testimonialImg from "../../assets/image/sunset.jpg";
-import petitdejeuner from "../../assets/Logo/breakFast.png";
-import restoBar from "../../assets/Logo/bar-restaurant.png";
+import petitdejeuner from "../../assets/Logo/breakfaste.png";
 import NTLogomini from "../../assets/Logo/N_TLogo_mini.png";
 import climatiseur from "../../assets/Logo/climatiseurbg.png";
 import airCondition from "../../assets/image/airCondition.jpg";
@@ -35,16 +34,23 @@ export default function HotelDetails() {
   return (
     <>
       <div className="bg-[#D2A76F] min-h-[250px] w-full relative">
-        <Link
+        {/* <div className="absolute top-[2vh] w-full max-lg:top-[10vh] cursor-pointer z-[200]">
+          <img
+            src={LogoHotel}
+            alt="Logo de l'hôtel"
+            className="w-45 h-45 max-lg:w-25 max-lg:h-25 mx-auto mb-4"
+          />
+        </div> */}
+        {/* <Link
           to={""}
-          className="absolute top-0 left-1/2 max-xl:pt-10 max-lg:pt-15 transform -translate-x-1/2 z-50"
+          className="absolute top-0 left-1/2 max-xl:pt-10 max-lg:pt-15 transform -translate-x-1/2 z-[50]"
         >
           <img
             src={LogoHotel}
             alt="Logo de l'hôtel"
-            className="w-45 h-45 max-xl:w-30 max-xl:h-30"
+            className="w-30 h-30"
           />
-        </Link>
+        </Link> */}
         <div className="w-full pt-45">
           <h1 className="uppercase text-4xl max-xl:text-3xl text-black/70 text-center bg-amber-50 py-5">
             À propos de l’hôtel

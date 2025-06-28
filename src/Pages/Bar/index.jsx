@@ -1,8 +1,8 @@
-import jus from "../../assets/image/jus.jpg";
-import coco from "../../assets/image/coco.jpg";
-import wiski from "../../assets/image/wiski.jpg";
-import coctails from "../../assets/image/coctails.jpg";
-import BarLounge from "../../assets/image/beachBar.jpg";
+import jus from "../../assets/Bar/jus.jpg";
+import wiski from "../../assets/Bar/wiski.jpg";
+import coctails from "../../assets/Bar/coctails.jpg";
+import BarLounge from "../../assets/Bar/beachBar.jpg";
+import restoLoungBar from "../../assets/Logo/bar-resto-loung.png";
 
 export default function Bar() {
   return (
@@ -30,15 +30,76 @@ export default function Bar() {
             </div>
           </div>
 
-          <div className="flex-1 w-full lg:h-[400px]">
+          <div className="flex-1 w-full lg:h-[400px] overflow-hidden shadow-lg">
             <img
               src={BarLounge}
               alt="Bar & Lounge"
-              className="w-full h-full max-md:h-100 max-lg:h-100 object-cover"
+              className="w-full h-full max-md:h-100 max-lg:h-100 object-cover transition-transform duration-500 hover:scale-105"
             />
           </div>
         </div>
 
+        {/* Gauche */}
+        <div className="grid grid-cols-3 max-lg:flex flex-col gap-5 p-10 max-sm:px-5">
+          <div className="max-lg:grid grid-cols-2 max-sm:grid-cols-1">
+            <div className="pb-5 max-lg:pb-0">
+              <img
+                src={restoLoungBar}
+                alt="restoLoungBar"
+                className="w-full h-140 max-sm:h-100 "
+              />
+            </div>
+            <div className="bg-amber-50 min-h-[400px] max-lg:h-140 max-sm:h-100 p-5 flex flex-col justify-center">
+              <h1 className="text-3xl max-sm:text-2xl font-bold max-sm:text-center text-amber-800 mb-4">
+                Soirée festive en bord de mer
+              </h1>
+              <p className="text-lg max-sm:text-sm max-sm:text-center leading-relaxed text-gray-700 ">
+                Rejoignez-nous chaque vendredi et samedi soir au N&T Hotel, pour
+                des soirées animées dans une ambiance chaleureuse et festive.
+                Détendez-vous autour d’un verre entre amis, au rythme de la
+                musique, tout en profitant d’une vue imprenable sur l’océan et
+                le sable doré.
+              </p>
+            </div>
+          </div>
+          {/* Centre */}
+
+          <div className="flex flex-col max-lg:grid grid-cols-2 max-sm:grid-cols-1 items-center gap-8 max-lg:gap-5">
+            <div className="w-full max-w-4xl overflow-hidden shadow-lg">
+              <img
+                src={jus}
+                alt="Jus frais"
+                className="w-full h-100 max-lg:h-137 max-sm:h-100 object-cover transition-transform duration-500 hover:scale-105"
+              />
+            </div>
+
+            <div className="w-full max-w-4xl overflow-hidden shadow-xl">
+              <img
+                src={coctails}
+                alt="Cocktails colorés"
+                className="w-full h-137 max-sm:h-100 object-cover transition-transform duration-500 hover:scale-105"
+              />
+            </div>
+          </div>
+
+          {/* Droite */}
+          <div className="max-lg:grid grid-cols-2 max-sm:grid-cols-1">
+            <div className="w-full bg-amber-50 text-center mb-5 max-lg:mb-0 h-[560px] max-sm:h-100 flex flex-col justify-center p-5">
+              <h1 className="uppercase text-4xl max-xl:text-3xl max-sm:text-2xl text-black/70 text-center py-5">
+                Horaire d’ouverture
+              </h1>
+            </div>
+
+            <div className="w-full max-w-4xl overflow-hidden shadow-lg">
+              <img
+                src={wiski}
+                alt="Jus frais"
+                className="w-full h-100 max-sm:h-100 max-lg:h-140 object-cover transition-transform duration-500 hover:scale-105"
+              />
+            </div>
+          </div>
+        </div>
+        {/* 
         <div className="flex flex-row max-md:flex-col mx-40 max-xl:mx-10 max-sm:mx-5 pb-20 max-sm:pb-10">
           <div className="grid grid-cols-2">
             {[
@@ -117,7 +178,7 @@ export default function Bar() {
               <span>24h</span>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );
