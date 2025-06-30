@@ -52,7 +52,7 @@ function DisplayMenuContent({
     },
     {
       name: "+261344328140",
-      url: "https://wa.me/+261344328140",
+      url: "",
       icon: <Phone size={16} color="black" className="mt-1" />,
     },
   ];
@@ -230,7 +230,7 @@ function DisplayLink({ menuIsOpen, setMenuIsOpen }) {
     },
     {
       name: "+261344328140",
-      url: "https://wa.me/+261344328140",
+      url: "",
       icon: (
         <Phone
           size={16}
