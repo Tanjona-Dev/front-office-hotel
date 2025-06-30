@@ -97,7 +97,7 @@ function DisplayMenuContent({
         </div>
       </div>
       <div className="flex gap-12 max-lg:flex-col">
-        <div className="w-110 px-5 flex flex-col gap-7">
+        <div className="max-lg:w-auto w-110 px-5 flex flex-col gap-7">
           <Link to={`/`}>
             <img src={LogoHotel} alt="Logo-hotel" className="w-30 mx-auto" />
           </Link>
@@ -108,7 +108,7 @@ function DisplayMenuContent({
           </p>
           <button
             onClick={() => navigate("/HotelDetails")}
-            className="border border-black/50 p-3 mx-auto w-[50%] max-lg:text-sm max-lg:w-[75%] rounded-full hover:bg-black/80 hover:text-white cursor-pointer transition-all duration-150"
+            className="border border-black/50 p-3 mx-auto xl:w-70 max-lg:w-70 max-lg:text-sm rounded-full hover:bg-black/80 hover:text-white cursor-pointer transition-all duration-150"
           >
             DECOUVRIR L'HOTEL
           </button>
@@ -169,38 +169,41 @@ function DisplayMenuContent({
             />
           </div>
         </div>
-        <div
-          onMouseEnter={() => setIsHover(true)}
-          onMouseLeave={() => setIsHover(false)}
-          className="xl:h-5"
-        >
-          <Link
-            to={`/reservation`}
-            className=" text-lg max-lg:border-b max-lg:text-right max-lg:mx-5 cursor-pointer"
+
+        <div className="flex flex-row gap-5 mr-10">
+          <div
+            onMouseEnter={() => setIsHover(true)}
+            onMouseLeave={() => setIsHover(false)}
+            className="xl:h-5"
           >
-            RESERVATION
-          </Link>
-          <Motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: isHover ? 1 : 0 }}
-            transition={{ duration: 0.5, type: "spring" }}
-            className={cn("bg-black h-[1px]")}
-          ></Motion.div>
-        </div>
-        <div
-          onMouseEnter={() => setIsHover2(true)}
-          onMouseLeave={() => setIsHover2(false)}
-          className="xl:h-5"
-        >
-          <h1 className="text-lg max-lg:border-b max-lg:text-right max-lg:mx-5 cursor-pointer">
-            CONTACT
-          </h1>
-          <Motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: isHover2 ? 1 : 0 }}
-            transition={{ duration: 0.5, type: "spring" }}
-            className={cn("bg-black h-[1px]")}
-          ></Motion.div>
+            <Link
+              to={`/reservation`}
+              className=" text-lg max-lg:border-b max-lg:text-right max-lg:mx-5 cursor-pointer"
+            >
+              RESERVATION
+            </Link>
+            <Motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: isHover ? 1 : 0 }}
+              transition={{ duration: 0.5, type: "spring" }}
+              className={cn("bg-black h-[1px]")}
+            ></Motion.div>
+          </div>
+          <div
+            onMouseEnter={() => setIsHover2(true)}
+            onMouseLeave={() => setIsHover2(false)}
+            className="xl:h-5"
+          >
+            <h1 className="text-lg max-lg:border-b max-lg:text-right max-lg:mx-5 cursor-pointer">
+              CONTACT
+            </h1>
+            <Motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: isHover2 ? 1 : 0 }}
+              transition={{ duration: 0.5, type: "spring" }}
+              className={cn("bg-black h-[1px]")}
+            ></Motion.div>
+          </div>
         </div>
       </div>
     </div>
@@ -325,7 +328,7 @@ function NavBarHorizotal({ menuIsOpen, setMenuIsOpen }) {
             </a>
           ))}
         </div>
-        <div className="text-end px-5 flex gap-5 items-center max-lg:flex-row-reverse max-lg:justify-between max-lg:px-0 max-lg:mx-0 max-lg:w-full max-lg:h-4 ">
+        <div className="text-end max-sm:px-5 flex gap-5 items-center max-lg:flex-row-reverse max-lg:justify-between max-lg:px-0 max-lg:mx-0 max-lg:w-full max-lg:h-4 ">
           <div>
             <DisplayLink
               menuIsOpen={menuIsOpen}
