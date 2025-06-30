@@ -5,17 +5,17 @@ import Testimonial from "./testimonial";
 import { ArrowDown } from "lucide-react";
 import TypeDeChambre from "./typeDeChambre";
 import { useNavigate } from "react-router-dom";
-import { motion as Motion } from "framer-motion";
-import home1 from "../../assets/image/sunset.jpg";
 import SPA from "../../assets/Spa/beachSpa.jpg";
 import Bar from "../../assets/Bar/beachBar.jpg";
+import { motion as Motion } from "framer-motion";
+import home1 from "../../assets/image/sunset.jpg";
 import NTLogo from "../../assets/Logo/N_TLogo.png";
 import BarLogo from "../../assets/Logo/BARLogo.png";
 import SpaLogo from "../../assets/Logo/SPALogo.png";
 import Chambre from "../../assets/image/beachRoom.jpg";
 import ChambreLogo from "../../assets/Logo/ChambreLogo.png";
-import Restaurant from "../../assets/Restaurant/beachRestaurant.jpg";
 import RestaurantLogo from "../../assets/Logo/RestaurantLogo.png";
+import Restaurant from "../../assets/Restaurant/beachRestaurant.jpg";
 
 function Home() {
   const navigate = useNavigate();
