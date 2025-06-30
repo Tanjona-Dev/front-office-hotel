@@ -1,24 +1,27 @@
 import { useState } from "react";
 import { X } from "lucide-react";
+import { Link } from "react-router-dom";
 import { motion as Motion } from "framer-motion";
 import room1 from "../../assets/image/room1.jpg";
-import room2 from "../../assets/image/room2.jpg";
-import room3 from "../../assets/image/room3.jpg";
-import room4 from "../../assets/image/room4.jpg";
+import room4 from "../../assets/image/room4.jpeg";
+import room3 from "../../assets/image/room3.jpeg";
 import room5 from "../../assets/image/room5.jpeg";
 import room6 from "../../assets/image/room6.jpeg";
 import room7 from "../../assets/image/room7.jpeg";
+import room2 from "../../assets/image/room2.jpeg";
 import room8 from "../../assets/image/room8.jpeg";
 import room10 from "../../assets/image/room10.jpeg";
 import room11 from "../../assets/image/room11.jpeg";
 import { Button } from "../../components/ui/button";
+import newRoom1 from "../../assets/image/newRoom1.jpeg";
+import newRoom2 from "../../assets/image/newRoom2.jpeg";
 import { AutoScrollImage } from "../../components/carouselAuto";
 
 function TypeDeChambre() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [indexImg, setIndexImg] = useState(null);
 
-  const tableauImage = [room1, room2, room3, room4];
+  const tableauImage = [room1, room2, room3, room4, newRoom1, newRoom2];
   const tableauImage2 = [room5, room6, room7, room8, room10, room11];
   return (
     <div className="overflow-x-hidden">
@@ -70,7 +73,11 @@ function TypeDeChambre() {
                 votre séjour un moment inoubliable.
               </Motion.p>
               <div className="mt-4 sm:mt-6">
-                <Button className="w-full sm:w-auto">Voir plus</Button>
+                <Link to={`/ChambreType`} className=" hover:cursor-pointer">
+                  <Button className="w-full sm:w-auto  hover:cursor-pointer shadow">
+                    Voir plus
+                  </Button>
+                </Link>
               </div>
             </Motion.div>
             <Motion.div

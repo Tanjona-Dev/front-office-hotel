@@ -16,7 +16,7 @@ import LogoHotel from "../../assets/Logo/N_TLogo.png";
 import barPlage from "../../assets/NavBar-img/barPlage.jpeg";
 import massageImg from "../../assets/NavBar-img/massage.jpeg";
 import restoImg from "../../assets/NavBar-img/restoPlage.jpeg";
-import loungeImg from "../../assets/NavBar-img/loungeBar.jpeg";
+import FamillyRoom1 from "../../assets/Rooms/FamillyRoom1.jpeg";
 import { motion as Motion, AnimatePresence } from "framer-motion";
 
 const roomType = [
@@ -115,7 +115,7 @@ function DisplayMenuContent({
         </div>
         <div className="grid grid-cols-2 gap-5 mt-5 max-lg:flex max-lg:flex-col max-lg:mx-5">
           {[
-            { title: "Chambre", image: loungeImg, path: "/ChambreType" },
+            { title: "Chambre", image: FamillyRoom1, path: "/ChambreType" },
             { title: "Bar", image: barPlage, path: "/Bar" },
             { title: "Restaurant", image: restoImg, path: "/Restaurant" },
             { title: "Spa", image: massageImg, path: "/Spa" },
@@ -272,8 +272,7 @@ function DisplayLink({ menuIsOpen, setMenuIsOpen }) {
 }
 
 // PRINCIPAL FUNCTION
-function NavBarHorizotal() {
-  const [menuIsOpen, setMenuIsOpen] = useState(false);
+function NavBarHorizotal({ menuIsOpen, setMenuIsOpen }) {
   const [isHover, setIsHover] = useState(false);
   const [isHover2, setIsHover2] = useState(false);
   const { setRoomType } = useContext(RoomTypeContext);

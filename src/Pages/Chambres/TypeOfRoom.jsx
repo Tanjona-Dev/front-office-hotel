@@ -3,11 +3,11 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
-import { useContext } from "react";
 import { Link } from "react-router-dom";
 import Autoplay from "embla-carousel-autoplay";
 import { ArrowRight, Check } from "lucide-react";
 import LogoHotel from "../../assets/Logo/N_TLogo.png";
+import { useContext, useEffect, useState } from "react";
 import LuxuryRoom from "../../assets/Rooms/LuxuryRoom2.jpeg";
 import FamilyRoom from "../../assets/Rooms/FamillyRoom2.jpeg";
 import balconImg from "../../assets/Rooms/BalconFamilly1.jpeg";
@@ -15,7 +15,28 @@ import bathFamImg from "../../assets/Rooms/BathFamillyRoom.jpg";
 import { RoomTypeContext } from "../../components/utils/context";
 import SupperiorRoomImg from "../../assets/Rooms/FamillyRoom1.jpeg";
 
-function TypeOfRoom() {
+function TimingDisplay({ menuIsOpen }) {
+  const [showContent, setShowContent] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowContent(true);
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [menuIsOpen]);
+
+  return (
+    <div>
+      {showContent ? (
+        <Link to={`/`} className="z-55">
+          <img src={LogoHotel} alt="Logo-hotel" className="w-30 h-30" />
+        </Link>
+      ) : null}
+    </div>
+  );
+}
+
+function TypeOfRoom({ menuIsOpen }) {
   const { roomType } = useContext(RoomTypeContext);
   const typeOfRoom = [
     {
@@ -108,10 +129,8 @@ function TypeOfRoom() {
   ];
   return (
     <div>
-      <div className="flex justify-center bg-amber-900 shadow-2xl max-lg:pt-15">
-        <Link to={`/`} className="z-55">
-          <img src={LogoHotel} alt="Logo-hotel" className="w-30 h-30" />
-        </Link>
+      <div className="flex justify-center bg-amber-900 h-30 shadow-2xl max-lg:pt-15">
+        {!menuIsOpen ? <TimingDisplay /> : ""}
       </div>
       <h1 className="flex justify-center text-4xl mt-8 max-lg:text-2xl">
         DETAIL DE LA CHAMBRE
